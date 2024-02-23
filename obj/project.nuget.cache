@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "d2g8e2Fzd1PZKjwBI6d4RUqJt8YgTGMHIJssu+ctgk6oVn6Glg1txsq8OVVGgeFuaTu/cR+1QNvfsgYN0RmCeg==",
+  "success": true,
+  "projectFilePath": "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj",
+  "expectedPackageFiles": [
+    "/home/esben/.nuget/packages/raylib-cs/6.0.0/raylib-cs.6.0.0.nupkg.sha512",
+    "/home/esben/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

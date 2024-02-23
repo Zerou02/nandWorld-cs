@@ -1,0 +1,3 @@
+name:good_nand
+components:and2,not,input,input,output
+connections:0/2,1/0;1/1,4/0;2/0,0/0;3/0,0/1;

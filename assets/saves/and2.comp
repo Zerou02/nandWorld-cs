@@ -1,0 +1,3 @@
+name:and2
+components:input,input,nand,not,output
+connections:0/0,2/0;1/0,2/1;2/2,3/0;3/1,4/0;

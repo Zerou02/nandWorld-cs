@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj": {}
+  },
+  "projects": {
+    "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj",
+        "projectName": "nandWorld",
+        "projectPath": "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj",
+        "packagesPath": "/home/esben/.nuget/packages/",
+        "outputPath": "/home/esben/programmierung/c#/raylibbis/nandWorld/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/esben/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/home/esben/godot_nugget_source": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Raylib-cs": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.116/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
