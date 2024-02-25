@@ -1,7 +1,8 @@
-using System.Collections.Generic;
+using Raylib_cs;
 
 public class Pin
 {
+    public Rectangle bounds = new Rectangle(0, 0, 20, 20);
     public BaseComponent baseComponent;
     public bool state = false;
     public bool isOut = false;

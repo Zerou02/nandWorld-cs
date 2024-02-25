@@ -1,8 +1,8 @@
-using System.Numerics;
+using Raylib_cs;
 
 public class Nand : BaseComponent
 {
-    public Vector2 position = new Vector2(100, 100);
+    public Rectangle bounds = new Rectangle(100, 100, 30, 60);
     public Nand() : base(3, 2)
     {
         type = "nand";
