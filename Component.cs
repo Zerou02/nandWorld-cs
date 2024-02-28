@@ -1,10 +1,14 @@
 using System.Collections.Generic;
+using System.Numerics;
+using Raylib_cs;
+
 
 public class Component : IComponent
 {
     public List<IComponent> components = new List<IComponent>();
     public List<Input> inputs = new List<Input>();
     public List<Output> outputs = new List<Output>();
+    public Rectangle bounds = new Rectangle(0, 0, 100, 100);
 
     public string type = "";
 
@@ -87,4 +91,20 @@ public class Component : IComponent
     {
         return this.components;
     }
+
+    public Rectangle getBounds()
+    {
+        return bounds;
+    }
+
+    public void move(Vector2 vec)
+    {
+        this.bounds = new Rectangle(this.bounds.Position + vec, this.bounds.Size);
+    }
+
+    public void setPosition(Vector2 vec)
+    {
+        this.bounds = new Rectangle(vec, this.bounds.Size);
+    }
 }
+

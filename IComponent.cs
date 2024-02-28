@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+using System.Numerics;
+using Raylib_cs;
 
 public interface IComponent
 {
@@ -11,4 +12,8 @@ public interface IComponent
     public Pin[] getPins();
     public void print();
     public void connectPin(int idx, Pin pin);
+    Rectangle getBounds();
+    void move(Vector2 vec);
+    void setPosition(Vector2 vec);
+    // void alignPins();
 }

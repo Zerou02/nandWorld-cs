@@ -1,16 +1,19 @@
-using System.Collections.Generic;
+using System.Numerics;
+using Raylib_cs;
+
 public abstract class BaseComponent : IComponent
 {
     public Pin[] pins;
     public int inputPins;
     public string type = "";
+    public Rectangle bounds = new Rectangle(0, 0, 0, 0);
     public BaseComponent(int amountPins, int amountInputPins)
     {
         this.pins = new Pin[amountPins];
         this.inputPins = amountInputPins;
         for (int i = 0; i < amountPins; i++)
         {
-            this.pins[i] = new Pin(this, i < amountInputPins);
+            this.pins[i] = new Pin(this, i >= amountInputPins);
         }
         eval();
     }
@@ -86,5 +89,20 @@ public abstract class BaseComponent : IComponent
     public List<IComponent> getComponents()
     {
         return new List<IComponent>();
+    }
+
+    public Rectangle getBounds()
+    {
+        return bounds;
+    }
+
+    public void move(Vector2 vec)
+    {
+        this.bounds = new Rectangle(this.bounds.Position + vec, this.bounds.Size);
+    }
+
+    public void setPosition(Vector2 vec)
+    {
+        this.bounds = new Rectangle(vec, this.bounds.Size);
     }
 }

@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic;
 using Raylib_cs;
 
 public class Pin
@@ -13,10 +14,17 @@ public class Pin
         this.isOut = isOut;
     }
 
+    public void setState(bool x)
+    {
+        this.state = x;
+        this.baseComponent.eval();
+    }
+
     public void setOuts()
     {
         connectedOuts.ForEach(x =>
         {
+            Console.WriteLine("ozt");
             x.state = this.state;
             x.baseComponent.eval();
             x.baseComponent.propagate();

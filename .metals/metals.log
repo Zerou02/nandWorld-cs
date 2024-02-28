@@ -653,3 +653,813 @@ java.util.concurrent.TimeoutException
 2024.02.25 20:50:02 INFO  BSP server: might give more details.
 Feb 25, 2024 8:50:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2024.02.25 20:50:32 INFO  Shutting down server
+2024.02.25 20:50:32 INFO  shutting down Metals
+2024.02.25 20:50:32 INFO  Exiting server
+2024.02.25 20:53:06 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+20:53:07.113 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+20:53:07.116 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+20:53:07.116 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+20:53:07.118 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+20:53:07.119 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+20:53:07.121 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+20:53:07.121 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+20:53:07.122 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+20:53:07.122 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+20:53:07.126 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+20:53:07.126 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+20:53:07.126 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+20:53:07.126 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+20:53:07.126 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+20:53:07.126 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+20:53:07.130 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+20:53:07.131 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+20:53:07.132 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+20:53:07.132 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+20:53:07.132 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+20:53:07.214 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+20:53:07.214 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+20:53:07.214 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+20:53:07.215 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+20:53:07.215 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+20:53:07.219 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+20:53:07.221 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+20:53:07.221 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+20:53:07.229 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+20:53:07.233 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+20:53:07.241 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+20:53:07.241 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+20:53:07.241 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+20:53:07.242 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+20:53:07.254 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.023s)
+20:53:07.256 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+20:53:07.263 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+20:53:07.267 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+20:53:07.474 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 25 of 100M
+2024.02.25 20:53:07 WARN  No build session currently active to reload.
+2024.02.25 20:53:07 INFO  Attempting to connect to the build server...
+2024.02.25 20:53:07 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.25 20:53:07 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.25 20:53:08 INFO  BSP server: Starting compilation server
+2024.02.25 20:53:08 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.25 20:53:08 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1708890788-18216699941748041251.log'
+2024.02.25 20:53:08 INFO  BSP server: Running
+2024.02.25 20:53:08 INFO  BSP server:   scala-cli bloop output
+2024.02.25 20:53:08 INFO  BSP server: might give more details.
+2024.02.25 20:54:07 ERROR Timeout waiting for 'build/initialize' response
+2024.02.25 20:54:07 WARN  Retrying connection to the build server scala-cli
+2024.02.25 20:54:07 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.25 20:54:07 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.25 20:54:08 INFO  BSP server: Starting compilation server
+2024.02.25 20:54:08 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.25 20:54:08 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1708890848-5717422895914244723.log'
+2024.02.25 20:54:08 INFO  BSP server: Running
+2024.02.25 20:54:08 INFO  BSP server:   scala-cli bloop output
+2024.02.25 20:54:08 INFO  BSP server: might give more details.
+2024.02.25 20:54:25 INFO  Shutting down server
+2024.02.25 20:54:25 INFO  shutting down Metals
+2024.02.25 20:54:25 INFO  Exiting server
+2024.02.27 18:34:14 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+18:34:15.421 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+18:34:15.424 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+18:34:15.425 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+18:34:15.428 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+18:34:15.428 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+18:34:15.428 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+18:34:15.428 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+18:34:15.428 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+18:34:15.428 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+18:34:15.431 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+18:34:15.431 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+18:34:15.431 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+18:34:15.431 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+18:34:15.431 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+18:34:15.431 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+18:34:15.435 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:34:15.435 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+18:34:15.437 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+18:34:15.437 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+18:34:15.437 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+18:34:15.517 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+18:34:15.517 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+18:34:15.517 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+18:34:15.518 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+18:34:15.518 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+18:34:15.522 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+18:34:15.524 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+18:34:15.524 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:34:15.535 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+18:34:15.539 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:34:15.549 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:34:15.549 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+18:34:15.549 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+18:34:15.549 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+18:34:15.549 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+18:34:15.550 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:34:15.550 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+18:34:15.550 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+18:34:15.550 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+18:34:15.550 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+18:34:15.563 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.027s)
+18:34:15.565 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+18:34:15.571 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+18:34:15.577 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+18:34:15.594 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 49 of 126M
+2024.02.27 18:34:15 INFO  Attempting to connect to the build server...
+2024.02.27 18:34:15 WARN  No build session currently active to reload.
+2024.02.27 18:34:15 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.27 18:34:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.27 18:34:16 INFO  BSP server: Starting compilation server
+2024.02.27 18:34:16 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.27 18:34:16 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709055256-8444650583800051390.log'
+2024.02.27 18:34:16 INFO  BSP server: Running
+2024.02.27 18:34:16 INFO  BSP server:   scala-cli bloop output
+2024.02.27 18:34:16 INFO  BSP server: might give more details.
+2024.02.27 18:35:15 ERROR Timeout waiting for 'build/initialize' response
+2024.02.27 18:35:15 WARN  Retrying connection to the build server scala-cli
+2024.02.27 18:35:15 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.27 18:35:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.27 18:35:16 INFO  BSP server: Starting compilation server
+2024.02.27 18:35:16 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.27 18:35:16 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709055316-9099629976539165109.log'
+2024.02.27 18:35:16 INFO  BSP server: Running
+2024.02.27 18:35:16 INFO  BSP server:   scala-cli bloop output
+2024.02.27 18:35:16 INFO  BSP server: might give more details.
+2024.02.27 18:36:15 ERROR Timeout waiting for 'build/initialize' response
+2024.02.27 18:36:15 WARN  Retrying connection to the build server scala-cli
+2024.02.27 18:36:15 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.27 18:36:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.27 18:36:16 INFO  BSP server: Starting compilation server
+2024.02.27 18:36:16 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.27 18:36:16 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709055376-12741606297120441816.log'
+2024.02.27 18:36:16 INFO  BSP server: Running
+2024.02.27 18:36:16 INFO  BSP server:   scala-cli bloop output
+2024.02.27 18:36:16 INFO  BSP server: might give more details.
+2024.02.27 18:37:15 ERROR Timeout waiting for 'build/initialize' response
+2024.02.27 18:37:15 WARN  Retrying connection to the build server scala-cli
+2024.02.27 18:37:15 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.27 18:37:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.27 18:37:16 INFO  BSP server: Starting compilation server
+2024.02.27 18:37:16 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.27 18:37:16 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709055436-5363205260940500574.log'
+2024.02.27 18:37:16 INFO  BSP server: Running
+2024.02.27 18:37:16 INFO  BSP server:   scala-cli bloop output
+2024.02.27 18:37:16 INFO  BSP server: might give more details.
+2024.02.27 18:38:15 ERROR Timeout waiting for 'build/initialize' response
+2024.02.27 18:38:15 WARN  Retrying connection to the build server scala-cli
+2024.02.27 18:38:15 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.27 18:38:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.27 18:38:16 INFO  BSP server: Starting compilation server
+2024.02.27 18:38:16 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.27 18:38:16 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709055496-9698579534434849407.log'
+2024.02.27 18:38:16 INFO  BSP server: Running
+2024.02.27 18:38:16 INFO  BSP server:   scala-cli bloop output
+2024.02.27 18:38:16 INFO  BSP server: might give more details.
+2024.02.27 18:39:15 ERROR Timeout waiting for 'build/initialize' response
+2024.02.27 18:39:15 WARN  Retrying connection to the build server scala-cli
+2024.02.27 18:39:15 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.27 18:39:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.27 18:39:16 INFO  BSP server: Starting compilation server
+2024.02.27 18:39:16 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.27 18:39:16 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709055556-3321215210124644953.log'
+2024.02.27 18:39:16 INFO  BSP server: Running
+2024.02.27 18:39:16 INFO  BSP server:   scala-cli bloop output
+2024.02.27 18:39:16 INFO  BSP server: might give more details.
+2024.02.27 18:40:15 ERROR Timeout waiting for 'build/initialize' response
+2024.02.27 18:40:15 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:677)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:560)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2024.02.27 21:42:09 INFO  Shutting down server
+2024.02.27 21:42:09 INFO  shutting down Metals
+2024.02.27 21:42:09 INFO  Exiting server
+2024.02.28 07:48:11 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+07:48:12.502 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+07:48:12.505 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+07:48:12.505 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+07:48:12.509 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+07:48:12.516 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+07:48:12.517 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+07:48:12.517 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+07:48:12.518 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+07:48:12.519 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+07:48:12.523 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+07:48:12.526 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+07:48:12.527 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+07:48:12.528 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+07:48:12.528 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+07:48:12.528 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+07:48:12.533 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+07:48:12.534 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+07:48:12.535 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+07:48:12.536 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+07:48:12.537 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+07:48:12.632 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+07:48:12.633 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+07:48:12.634 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+07:48:12.636 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+07:48:12.636 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+07:48:12.644 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+07:48:12.645 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+07:48:12.646 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+07:48:12.653 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+07:48:12.656 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+07:48:12.669 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+07:48:12.669 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+07:48:12.669 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+07:48:12.669 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+07:48:12.669 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+07:48:12.670 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+07:48:12.670 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+07:48:12.670 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+07:48:12.670 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+07:48:12.670 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+07:48:12.683 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.029s)
+07:48:12.685 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+07:48:12.691 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+07:48:12.696 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+07:48:12.905 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 43 of 152M
+2024.02.28 07:48:13 WARN  No build session currently active to reload.
+2024.02.28 07:48:13 INFO  Attempting to connect to the build server...
+2024.02.28 07:48:13 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 07:48:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 07:48:14 INFO  BSP server: Starting compilation server
+2024.02.28 07:48:14 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 07:48:14 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709102894-17845057540720811090.log'
+2024.02.28 07:48:14 INFO  BSP server: Running
+2024.02.28 07:48:14 INFO  BSP server:   scala-cli bloop output
+2024.02.28 07:48:14 INFO  BSP server: might give more details.
+2024.02.28 07:49:13 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 07:49:13 WARN  Retrying connection to the build server scala-cli
+2024.02.28 07:49:13 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 07:49:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 07:49:13 INFO  BSP server: Starting compilation server
+2024.02.28 07:49:13 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 07:49:13 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709102953-15055008681882502461.log'
+2024.02.28 07:49:13 INFO  BSP server: Running
+2024.02.28 07:49:13 INFO  BSP server:   scala-cli bloop output
+2024.02.28 07:49:13 INFO  BSP server: might give more details.
+2024.02.28 07:50:13 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 07:50:13 WARN  Retrying connection to the build server scala-cli
+2024.02.28 07:50:13 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 07:50:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 07:50:13 INFO  BSP server: Starting compilation server
+2024.02.28 07:50:13 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 07:50:13 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709103013-2187024424030505196.log'
+2024.02.28 07:50:13 INFO  BSP server: Running
+2024.02.28 07:50:13 INFO  BSP server:   scala-cli bloop output
+2024.02.28 07:50:13 INFO  BSP server: might give more details.
+2024.02.28 07:51:13 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 07:51:13 WARN  Retrying connection to the build server scala-cli
+2024.02.28 07:51:13 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 07:51:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 07:51:13 INFO  BSP server: Starting compilation server
+2024.02.28 07:51:13 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 07:51:13 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709103073-13702977005364711099.log'
+2024.02.28 07:51:13 INFO  BSP server: Running
+2024.02.28 07:51:13 INFO  BSP server:   scala-cli bloop output
+2024.02.28 07:51:13 INFO  BSP server: might give more details.
+2024.02.28 07:52:13 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 07:52:13 WARN  Retrying connection to the build server scala-cli
+2024.02.28 07:52:13 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 07:52:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 07:52:13 INFO  BSP server: Starting compilation server
+2024.02.28 07:52:13 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 07:52:13 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709103133-10231156164658947200.log'
+2024.02.28 07:52:13 INFO  BSP server: Running
+2024.02.28 07:52:13 INFO  BSP server:   scala-cli bloop output
+2024.02.28 07:52:13 INFO  BSP server: might give more details.
+2024.02.28 07:53:13 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 07:53:13 WARN  Retrying connection to the build server scala-cli
+2024.02.28 07:53:13 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 07:53:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 07:53:13 INFO  BSP server: Starting compilation server
+2024.02.28 07:53:13 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 07:53:13 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709103193-18136635094105536925.log'
+2024.02.28 07:53:13 INFO  BSP server: Running
+2024.02.28 07:53:13 INFO  BSP server:   scala-cli bloop output
+2024.02.28 07:53:13 INFO  BSP server: might give more details.
+2024.02.28 07:54:13 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 07:54:13 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:677)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:560)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2024.02.28 08:43:47 INFO  Shutting down server
+2024.02.28 08:43:47 INFO  shutting down Metals
+2024.02.28 08:43:47 INFO  Exiting server
+2024.02.28 08:43:58 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+08:43:59.064 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+08:43:59.069 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+08:43:59.069 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+08:43:59.072 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+08:43:59.072 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+08:43:59.073 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+08:43:59.073 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+08:43:59.073 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+08:43:59.073 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+08:43:59.077 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+08:43:59.077 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+08:43:59.077 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+08:43:59.077 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+08:43:59.077 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+08:43:59.077 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+08:43:59.084 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:43:59.084 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+08:43:59.086 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+08:43:59.087 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+08:43:59.087 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+08:43:59.178 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+08:43:59.179 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+08:43:59.179 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+08:43:59.180 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+08:43:59.180 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+08:43:59.186 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+08:43:59.187 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+08:43:59.187 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:43:59.196 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+08:43:59.200 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:43:59.209 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:43:59.210 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:43:59.210 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:43:59.210 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:43:59.210 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:43:59.211 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:43:59.212 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:43:59.212 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:43:59.212 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:43:59.212 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:43:59.226 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.029s)
+08:43:59.229 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+08:43:59.241 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+08:43:59.257 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+08:43:59.483 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 32 of 120M
+2024.02.28 08:43:59 INFO  Attempting to connect to the build server...
+2024.02.28 08:43:59 WARN  No build session currently active to reload.
+2024.02.28 08:43:59 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 08:43:59 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 08:44:00 INFO  BSP server: Starting compilation server
+2024.02.28 08:44:00 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 08:44:00 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709106240-3237590678136245159.log'
+2024.02.28 08:44:00 INFO  BSP server: Running
+2024.02.28 08:44:00 INFO  BSP server:   scala-cli bloop output
+2024.02.28 08:44:00 INFO  BSP server: might give more details.
+2024.02.28 08:44:59 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 08:44:59 WARN  Retrying connection to the build server scala-cli
+2024.02.28 08:44:59 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 08:44:59 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 08:45:00 INFO  BSP server: Starting compilation server
+2024.02.28 08:45:00 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 08:45:00 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709106300-10598460477975464504.log'
+2024.02.28 08:45:00 INFO  BSP server: Running
+2024.02.28 08:45:00 INFO  BSP server:   scala-cli bloop output
+2024.02.28 08:45:00 INFO  BSP server: might give more details.
+2024.02.28 08:45:59 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 08:45:59 WARN  Retrying connection to the build server scala-cli
+2024.02.28 08:45:59 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 08:45:59 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 08:46:00 INFO  BSP server: Starting compilation server
+2024.02.28 08:46:00 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 08:46:00 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709106360-8826062320150742764.log'
+2024.02.28 08:46:00 INFO  BSP server: Running
+2024.02.28 08:46:00 INFO  BSP server:   scala-cli bloop output
+2024.02.28 08:46:00 INFO  BSP server: might give more details.
+java.util.concurrent.RejectedExecutionException: Task Future(<not completed>) rejected from java.util.concurrent.ThreadPoolExecutor@4a9c70ea[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 46]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2055)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:825)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1355)
+	at scala.concurrent.impl.ExecutionContextImpl.execute(ExecutionContextImpl.scala:21)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:429)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:435)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.handleFailure(Promise.scala:444)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:506)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2024.02.28 18:35:28 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+18:35:28.947 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+18:35:28.949 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+18:35:28.949 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+18:35:28.952 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+18:35:28.952 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+18:35:28.953 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+18:35:28.953 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+18:35:28.953 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+18:35:28.953 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+18:35:28.956 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+18:35:28.957 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+18:35:28.957 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+18:35:28.957 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+18:35:28.957 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+18:35:28.957 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+18:35:28.960 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:35:28.961 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+18:35:28.961 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+18:35:28.962 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+18:35:28.962 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+18:35:29.042 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+18:35:29.042 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+18:35:29.042 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+18:35:29.043 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+18:35:29.043 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+18:35:29.048 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+18:35:29.050 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+18:35:29.050 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:35:29.058 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+18:35:29.063 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:35:29.070 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:35:29.071 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+18:35:29.071 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+18:35:29.071 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+18:35:29.071 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+18:35:29.071 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:35:29.072 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+18:35:29.072 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+18:35:29.072 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+18:35:29.072 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+18:35:29.090 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.030s)
+18:35:29.093 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+18:35:29.099 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+18:35:29.103 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+18:35:29.112 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 71 of 100M
+2024.02.28 18:35:29 WARN  No build session currently active to reload.
+2024.02.28 18:35:29 INFO  Attempting to connect to the build server...
+2024.02.28 18:35:29 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:35:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:35:30 INFO  BSP server: Starting compilation server
+2024.02.28 18:35:30 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:35:30 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709141730-5175057651706429416.log'
+2024.02.28 18:35:30 INFO  BSP server: Running
+2024.02.28 18:35:30 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:35:30 INFO  BSP server: might give more details.
+2024.02.28 18:36:29 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:36:29 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:36:29 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:36:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:36:29 INFO  BSP server: Starting compilation server
+2024.02.28 18:36:29 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:36:29 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709141789-9330590834635051440.log'
+2024.02.28 18:36:29 INFO  BSP server: Running
+2024.02.28 18:36:29 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:36:29 INFO  BSP server: might give more details.
+2024.02.28 18:37:29 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:37:29 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:37:29 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:37:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:37:29 INFO  BSP server: Starting compilation server
+2024.02.28 18:37:29 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:37:29 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709141849-13819158131790204901.log'
+2024.02.28 18:37:29 INFO  BSP server: Running
+2024.02.28 18:37:29 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:37:29 INFO  BSP server: might give more details.
+2024.02.28 18:38:29 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:38:29 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:38:29 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:38:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:38:29 INFO  BSP server: Starting compilation server
+2024.02.28 18:38:29 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:38:29 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709141909-4570114232456969652.log'
+2024.02.28 18:38:29 INFO  BSP server: Running
+2024.02.28 18:38:29 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:38:29 INFO  BSP server: might give more details.
+2024.02.28 18:39:29 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:39:29 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:39:29 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:39:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:39:29 INFO  BSP server: Starting compilation server
+2024.02.28 18:39:29 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:39:29 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709141969-16555600536318291401.log'
+2024.02.28 18:39:29 INFO  BSP server: Running
+2024.02.28 18:39:29 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:39:29 INFO  BSP server: might give more details.
+2024.02.28 18:40:29 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:40:29 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:40:29 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:40:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:40:29 INFO  BSP server: Starting compilation server
+2024.02.28 18:40:29 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:40:29 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142029-10769174719806157235.log'
+2024.02.28 18:40:29 INFO  BSP server: Running
+2024.02.28 18:40:29 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:40:29 INFO  BSP server: might give more details.
+2024.02.28 18:41:29 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:41:29 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:677)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:560)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2024.02.28 18:44:21 INFO  Shutting down server
+2024.02.28 18:44:21 INFO  shutting down Metals
+2024.02.28 18:44:21 INFO  Exiting server
+2024.02.28 18:44:30 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+18:44:31.738 [pool-1-thread-5] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+18:44:31.740 [pool-1-thread-5] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+18:44:31.740 [pool-1-thread-5] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+18:44:31.743 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+18:44:31.743 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+18:44:31.743 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+18:44:31.744 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+18:44:31.744 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+18:44:31.745 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+18:44:31.747 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+18:44:31.748 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+18:44:31.748 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+18:44:31.748 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+18:44:31.748 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+18:44:31.748 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+18:44:31.753 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:44:31.753 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+18:44:31.754 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+18:44:31.754 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+18:44:31.754 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+18:44:31.846 [pool-1-thread-5] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+18:44:31.847 [pool-1-thread-5] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+18:44:31.847 [pool-1-thread-5] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+18:44:31.848 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+18:44:31.848 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+18:44:31.853 [pool-1-thread-5] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+18:44:31.854 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+18:44:31.854 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:44:31.861 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+18:44:31.864 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:44:31.873 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:44:31.873 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+18:44:31.873 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+18:44:31.873 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+18:44:31.873 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+18:44:31.874 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+18:44:31.874 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+18:44:31.874 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+18:44:31.874 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+18:44:31.874 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+18:44:31.887 [pool-1-thread-5] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.025s)
+18:44:31.890 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+18:44:31.896 [pool-1-thread-5] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+18:44:31.901 [pool-1-thread-5] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+18:44:32.107 [pool-1-thread-5] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 33 of 100M
+2024.02.28 18:44:32 WARN  No build session currently active to reload.
+2024.02.28 18:44:32 INFO  Attempting to connect to the build server...
+2024.02.28 18:44:32 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:44:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:44:33 INFO  BSP server: Starting compilation server
+2024.02.28 18:44:33 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:44:33 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142273-15369403227957340092.log'
+2024.02.28 18:44:33 INFO  BSP server: Running
+2024.02.28 18:44:33 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:44:33 INFO  BSP server: might give more details.
+2024.02.28 18:45:32 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:45:32 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:45:32 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:45:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:45:32 INFO  BSP server: Starting compilation server
+2024.02.28 18:45:32 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:45:32 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142332-15041098609309573738.log'
+2024.02.28 18:45:32 INFO  BSP server: Running
+2024.02.28 18:45:32 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:45:32 INFO  BSP server: might give more details.
+2024.02.28 18:46:32 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:46:32 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:46:32 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:46:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:46:32 INFO  BSP server: Starting compilation server
+2024.02.28 18:46:32 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:46:32 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142392-12604141719713176676.log'
+2024.02.28 18:46:32 INFO  BSP server: Running
+2024.02.28 18:46:32 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:46:32 INFO  BSP server: might give more details.
+2024.02.28 18:47:32 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:47:32 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:47:32 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:47:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:47:32 INFO  BSP server: Starting compilation server
+2024.02.28 18:47:32 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:47:32 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142452-10690097175808390261.log'
+2024.02.28 18:47:32 INFO  BSP server: Running
+2024.02.28 18:47:32 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:47:32 INFO  BSP server: might give more details.
+2024.02.28 18:48:32 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:48:32 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:48:32 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:48:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:48:32 INFO  BSP server: Starting compilation server
+2024.02.28 18:48:32 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:48:32 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142512-14217959767841074181.log'
+2024.02.28 18:48:32 INFO  BSP server: Running
+2024.02.28 18:48:32 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:48:32 INFO  BSP server: might give more details.
+2024.02.28 18:49:32 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:49:32 WARN  Retrying connection to the build server scala-cli
+2024.02.28 18:49:32 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 18:49:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 18:49:32 INFO  BSP server: Starting compilation server
+2024.02.28 18:49:32 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 18:49:32 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709142572-12284697044904781670.log'
+2024.02.28 18:49:32 INFO  BSP server: Running
+2024.02.28 18:49:32 INFO  BSP server:   scala-cli bloop output
+2024.02.28 18:49:32 INFO  BSP server: might give more details.
+2024.02.28 18:50:32 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 18:50:32 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:677)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:560)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+Feb 28, 2024 7:06:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Feb 28, 2024 7:06:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.02.28 21:53:28 INFO  Started: Metals version 1.2.2 in folders '/home/esben/programmierung/c#/raylibbis/nandWorld' for client Visual Studio Code 1.86.2.
+21:53:29.677 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+21:53:29.680 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+21:53:29.680 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+21:53:29.684 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+21:53:29.685 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+21:53:29.685 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+21:53:29.685 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+21:53:29.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+21:53:29.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/esben/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+21:53:29.690 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+21:53:29.690 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+21:53:29.691 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+21:53:29.691 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+21:53:29.692 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+21:53:29.692 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+21:53:29.695 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:53:29.696 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+21:53:29.708 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+21:53:29.710 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+21:53:29.711 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+21:53:29.782 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/esben/programmierung/c#/raylibbis/nandWorld/.metals/metals (H2 2.2)
+21:53:29.782 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+21:53:29.782 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+21:53:29.784 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+21:53:29.784 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+21:53:29.791 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+21:53:29.793 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+21:53:29.794 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:53:29.803 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+21:53:29.811 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:53:29.819 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:53:29.819 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+21:53:29.819 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+21:53:29.819 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+21:53:29.819 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+21:53:29.820 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:53:29.820 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+21:53:29.820 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+21:53:29.820 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+21:53:29.821 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+21:53:29.843 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.037s)
+21:53:29.849 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+21:53:29.864 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+21:53:29.874 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+21:53:30.091 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 56 of 127M
+2024.02.28 21:53:30 INFO  Attempting to connect to the build server...
+2024.02.28 21:53:30 WARN  No build session currently active to reload.
+2024.02.28 21:53:30 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 21:53:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 21:53:31 INFO  BSP server: Starting compilation server
+2024.02.28 21:53:31 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 21:53:31 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709153611-4861658648045485017.log'
+2024.02.28 21:53:31 INFO  BSP server: Running
+2024.02.28 21:53:31 INFO  BSP server:   scala-cli bloop output
+2024.02.28 21:53:31 INFO  BSP server: might give more details.
+2024.02.28 21:54:30 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 21:54:30 WARN  Retrying connection to the build server scala-cli
+2024.02.28 21:54:30 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 21:54:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 21:54:30 INFO  BSP server: Starting compilation server
+2024.02.28 21:54:30 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 21:54:30 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709153670-17589582604727602554.log'
+2024.02.28 21:54:30 INFO  BSP server: Running
+2024.02.28 21:54:30 INFO  BSP server:   scala-cli bloop output
+2024.02.28 21:54:30 INFO  BSP server: might give more details.
+2024.02.28 21:55:30 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 21:55:30 WARN  Retrying connection to the build server scala-cli
+2024.02.28 21:55:30 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 21:55:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 21:55:30 INFO  BSP server: Starting compilation server
+2024.02.28 21:55:30 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 21:55:30 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709153730-14024205915798853451.log'
+2024.02.28 21:55:30 INFO  BSP server: Running
+2024.02.28 21:55:30 INFO  BSP server:   scala-cli bloop output
+2024.02.28 21:55:30 INFO  BSP server: might give more details.
+2024.02.28 21:56:30 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 21:56:30 WARN  Retrying connection to the build server scala-cli
+2024.02.28 21:56:30 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 21:56:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 21:56:30 INFO  BSP server: Starting compilation server
+2024.02.28 21:56:30 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 21:56:30 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709153790-10633892646838341760.log'
+2024.02.28 21:56:30 INFO  BSP server: Running
+2024.02.28 21:56:30 INFO  BSP server:   scala-cli bloop output
+2024.02.28 21:56:30 INFO  BSP server: might give more details.
+2024.02.28 21:57:30 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 21:57:30 WARN  Retrying connection to the build server scala-cli
+2024.02.28 21:57:30 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 21:57:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 21:57:30 INFO  BSP server: Starting compilation server
+2024.02.28 21:57:30 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 21:57:30 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709153850-6919703799714033851.log'
+2024.02.28 21:57:30 INFO  BSP server: Running
+2024.02.28 21:57:30 INFO  BSP server:   scala-cli bloop output
+2024.02.28 21:57:30 INFO  BSP server: might give more details.
+2024.02.28 21:58:30 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 21:58:30 WARN  Retrying connection to the build server scala-cli
+2024.02.28 21:58:30 INFO  Running BSP server List(/home/esben/.local/share/coursier/bin/.scala-cli.aux, bsp, --json-options, /home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/ide-options-v2.json, /home/esben/programmierung/c#/raylibbis/nandWorld)
+2024.02.28 21:58:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/esben/programmierung/c#/raylibbis/nandWorld/.metals/bsp.trace.json or /home/esben/.cache/metals/bsp.trace.json
+2024.02.28 21:58:30 INFO  BSP server: Starting compilation server
+2024.02.28 21:58:30 INFO  BSP server: Error: bloop.rifle.FailedToStartServerExitCodeException: Server failed with exit code 1
+2024.02.28 21:58:30 INFO  BSP server: For more details, please see '/home/esben/programmierung/c#/raylibbis/nandWorld/.scala-build/stacktraces/1709153910-15315884849524325562.log'
+2024.02.28 21:58:30 INFO  BSP server: Running
+2024.02.28 21:58:30 INFO  BSP server:   scala-cli bloop output
+2024.02.28 21:58:30 INFO  BSP server: might give more details.
+2024.02.28 21:59:30 ERROR Timeout waiting for 'build/initialize' response
+2024.02.28 21:59:30 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:677)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:560)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+Feb 28, 2024 10:56:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
