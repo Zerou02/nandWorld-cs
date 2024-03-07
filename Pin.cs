@@ -7,6 +7,8 @@ public class Pin
     public BaseComponent baseComponent;
     public bool state = false;
     public bool isOut = false;
+    public bool isInner = false;
+    public bool isComposite = false;
     public List<Pin> connectedOuts = new List<Pin>();
     public Pin(BaseComponent baseComponent, bool isOut)
     {
@@ -24,7 +26,6 @@ public class Pin
     {
         connectedOuts.ForEach(x =>
         {
-            Console.WriteLine("ozt");
             x.state = this.state;
             x.baseComponent.eval();
             x.baseComponent.propagate();

@@ -15,5 +15,10 @@ public interface IComponent
     Rectangle getBounds();
     void move(Vector2 vec);
     void setPosition(Vector2 vec);
-    // void alignPins();
+    void setSize(Vector2 vec);
+    void setBaseComp(IComponent component);
+    IComponent? getBaseComp();
+    IComponent getHighestComp();
+    List<IComponent> getConnectedHighestOuts();
+    void setHighestComp(IComponent component);
 }

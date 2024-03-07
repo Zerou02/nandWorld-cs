@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.IO;
 public class Utils
 {
     public static void save(IComponent component)
@@ -36,7 +34,7 @@ public class Utils
                 });
             }
         }
-        var writer = new StreamWriter("scripts/assets/saves/" + type + ".comp");
+        var writer = new StreamWriter("assets/saves/" + type + ".comp");
         writer.Write(savString);
         writer.Flush();
         writer.Close();
@@ -44,7 +42,7 @@ public class Utils
 
     public static IComponent Load(string name)
     {
-        var path = "scripts/assets/saves/" + name + ".comp";
+        var path = "assets/saves/" + name + ".comp";
         var data = new StreamReader(path).ReadToEnd();
         var retComp = new Component(name);
         var nameComp = data.Split("components:");
@@ -59,19 +57,25 @@ public class Utils
             if (compsSplit[i] == "input")
             {
                 comp = new Input();
+                foreach (var x in comp.getPins()) { x.isComposite = true; }
             }
             else if (compsSplit[i] == "nand")
             {
                 comp = new Nand();
+                foreach (var x in comp.getPins()) { x.isInner = true; }
+
             }
             else if (compsSplit[i] == "output")
             {
                 comp = new Output();
+                foreach (var x in comp.getPins()) { x.isComposite = true; }
             }
             else
             {
                 comp = Utils.Load(compsSplit[i]);
+                foreach (var x in comp.getPins()) { x.isInner = true; }
             }
+            comp.setBaseComp(retComp);
             retComp.addComp(comp);
             var pins = comp.getPins();
             for (int j = 0; j < pins.Length; j++)

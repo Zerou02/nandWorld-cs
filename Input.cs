@@ -8,6 +8,7 @@ public class Input : BaseComponent
 
     public override void eval()
     {
+        this.pins[0].setOuts();
     }
 
     public override void setIn(int idx, bool val)

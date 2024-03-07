@@ -7,6 +7,7 @@ public abstract class BaseComponent : IComponent
     public int inputPins;
     public string type = "";
     public Rectangle bounds = new Rectangle(0, 0, 0, 0);
+    public IComponent? baseComponent;
     public BaseComponent(int amountPins, int amountInputPins)
     {
         this.pins = new Pin[amountPins];
@@ -15,6 +16,7 @@ public abstract class BaseComponent : IComponent
         {
             this.pins[i] = new Pin(this, i >= amountInputPins);
         }
+        baseComponent = null;
         eval();
     }
 
@@ -104,5 +106,57 @@ public abstract class BaseComponent : IComponent
     public void setPosition(Vector2 vec)
     {
         this.bounds = new Rectangle(vec, this.bounds.Size);
+    }
+
+    public void setSize(Vector2 vector2)
+    {
+        this.bounds = new Rectangle(this.bounds.Position, vector2);
+    }
+
+
+    public void setBaseComp(IComponent component)
+    {
+        this.baseComponent = component;
+    }
+
+    public IComponent? getBaseComp()
+    {
+        return this.baseComponent;
+    }
+    public IComponent getHighestComp()
+    {
+        var baseComp = this.baseComponent;
+        if (baseComp == null || baseComp == this)
+        {
+            return this;
+        }
+        Console.WriteLine(this.getType() + "bbccff" + baseComp.getType());
+
+        IComponent? last = null;
+        while (baseComp.getBaseComp() != null && baseComp != last)
+        {
+            last = baseComp;
+            baseComp = baseComp.getBaseComp();
+
+        }
+        return baseComp;
+    }
+
+    public List<IComponent> getConnectedHighestOuts()
+    {
+        var map = new HashSet<IComponent>();
+        foreach (var x in getPins())
+        {
+            foreach (var y in x.connectedOuts)
+            {
+                map.Add(y.baseComponent.getHighestComp());
+            }
+        }
+        return map.ToList();
+    }
+
+    public void setHighestComp(IComponent component)
+    {
+        this.baseComponent = component;
     }
 }

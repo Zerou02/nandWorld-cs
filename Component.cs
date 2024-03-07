@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Numerics;
 using Raylib_cs;
 
@@ -9,7 +10,7 @@ public class Component : IComponent
     public List<Input> inputs = new List<Input>();
     public List<Output> outputs = new List<Output>();
     public Rectangle bounds = new Rectangle(0, 0, 100, 100);
-
+    public IComponent? baseComponent = null;
     public string type = "";
 
     public Component(string type)
@@ -105,6 +106,54 @@ public class Component : IComponent
     public void setPosition(Vector2 vec)
     {
         this.bounds = new Rectangle(vec, this.bounds.Size);
+    }
+
+    public void setSize(Vector2 vector2)
+    {
+        this.bounds = new Rectangle(this.bounds.Position, vector2);
+    }
+
+    public void setBaseComp(IComponent component)
+    {
+        this.baseComponent = component;
+    }
+
+    public IComponent? getBaseComp()
+    {
+        return this.baseComponent;
+    }
+    public IComponent getHighestComp()
+    {
+        var baseComp = this.baseComponent;
+        Console.WriteLine("b");
+        if (baseComp == null || baseComp == this)
+        {
+            return this;
+        }
+        while (baseComp!.getBaseComp() != null)
+        {
+            baseComp = baseComp.getBaseComp();
+        }
+        Console.WriteLine("a");
+        return baseComp;
+    }
+
+    public List<IComponent> getConnectedHighestOuts()
+    {
+        var map = new HashSet<IComponent>();
+        foreach (var x in getOutputPins())
+        {
+            foreach (var y in x.connectedOuts)
+            {
+                map.Add(y.baseComponent.getHighestComp());
+            }
+        }
+        return map.ToList();
+    }
+
+    public void setHighestComp(IComponent component)
+    {
+        this.baseComponent = component;
     }
 }
 
