@@ -1,7 +1,7 @@
 using Microsoft.VisualBasic;
 using Raylib_cs;
 
-public class Pin
+public class Pin : OctoComp
 {
     public Rectangle bounds = new Rectangle(0, 0, 20, 20);
     public BaseComponent baseComponent;
@@ -29,6 +29,18 @@ public class Pin
             x.state = this.state;
             x.baseComponent.eval();
             x.baseComponent.propagate();
+        });
+    }
+
+    public void draw()
+    {
+        Drawing.drawCircle(bounds, state ? Color.Green : Color.Red);
+        connectedOuts.ForEach(x =>
+        {
+            if (!(isInner || x.isInner))
+            {
+                Raylib.DrawLineV(OctoMath.getCentreOfCircle(bounds), OctoMath.getCentreOfCircle(x.bounds), Color.Black);
+            }
         });
     }
 }

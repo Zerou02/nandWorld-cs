@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Net;
 using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
 using Raylib_cs;
 
 class Main
 {
-    float scrollSpeed = 2f;
     IComponent? draggedComponent = null;
     IComponent? selectedComp = null;
     Pin? startPin = null;
@@ -15,89 +11,75 @@ class Main
 
     Vector2 mousePos = new Vector2();
     Vector2 mouseDelta = new Vector2();
-    bool leftDown = false;
-    bool shiftPressd = false;
-    bool capsLockPressed = false;
+
     bool uiSelected = false;
     TextInput textInput;
     List<List<IComponent>> views = new List<List<IComponent>>();
+    OctoState state = new OctoState();
+    Camera camera = new Camera();
+    List<OctoComp> octoComps = new List<OctoComp>();
+    Grid grid;
     public Main()
     {
-        Raylib.InitWindow(800, 480, "Definitiv Godot");
+        Raylib.InitWindow(800, 480, "Definitiv Octodot");
         Raylib.SetTargetFPS(60);
-
-        var inputBox = new Rectangle(700, 150, 100, 20);
-        textInput = new TextInput(inputBox);
+        state.screenSize = new Vector2(Raylib.GetScreenWidth(), Raylib.GetScreenHeight());
+        textInput = new TextInput(new Rectangle(700, 150, 100, 20));
         textInput.text = "and";
 
+        grid = new Grid(state);
         var nand = new Nand();
         var nand2 = new Nand();
-        components.Add(nand);
-        components.Add(nand2);
+        spawnComp(nand);
+        spawnComp(nand2);
         nand.connectPin(2, nand2.getPins()[0]);
 
-        var btn = new Button(new Rectangle(700, 0, 100, 20), "create Nand", Color.Gray, Color.White, () => { components.Add(new Nand()); });
-        btn.hoverColor = Color.Blue;
-        var btn2 = new Button(new Rectangle(700, 30, 100, 20), "create Input ", Color.Gray, Color.White, () => { components.Add(new Input()); });
-        var btn3 = new Button(new Rectangle(700, 60, 100, 20), "create Output", Color.Gray, Color.White, () => { components.Add(new Output()); });
-        var btn4 = new Button(new Rectangle(700, 90, 100, 20), "save         ", Color.Gray, Color.White, () => { save(); });
-        var btn5 = new Button(new Rectangle(700, 120, 100, 20), "load        ", Color.Gray, Color.White, () => { spawnComp(Utils.Load(textInput.text)); });
+        var btn = new Button(new Rectangle(700, 0, 100, 20), "create Nand", () => { spawnComp(new Nand()); });
+        var btn2 = new Button(new Rectangle(700, 30, 100, 20), "create Input ", () => { spawnComp(new Input()); });
+        var btn3 = new Button(new Rectangle(700, 60, 100, 20), "create Output", () => { spawnComp(new Output()); });
+        var btn4 = new Button(new Rectangle(700, 90, 100, 20), "save         ", () => { save(); });
+        var btn5 = new Button(new Rectangle(700, 120, 100, 20), "load        ", () => { spawnComp(Utils.Load(textInput.text)); });
 
-        btn2.hoverColor = Color.Blue;
-        btn3.hoverColor = Color.Blue;
-        btn4.hoverColor = Color.Blue;
-        btn5.hoverColor = Color.Blue;
-
-
-        buttons.Add(btn);
-        buttons.Add(btn2);
-        buttons.Add(btn3);
-        buttons.Add(btn4);
-        buttons.Add(btn5);
+        octoComps.Add(btn);
+        octoComps.Add(btn2);
+        octoComps.Add(btn3);
+        octoComps.Add(btn4);
+        octoComps.Add(btn5);
+        octoComps.Add(textInput);
+        octoComps.Add(grid);
 
 
-        Console.WriteLine(Utils.Load("and").getPins()[0].baseComponent);
+        var testCable = new Cable();
+        testCable.grid = this.grid;
+        var img = Raylib.LoadImage("assets/sprites/wires.png");
+        var tex = Raylib.LoadTextureFromImage(img);
         while (!Raylib.WindowShouldClose())
         {
-            shiftPressd = Raylib.IsKeyDown(KeyboardKey.LeftShift) || Raylib.IsKeyDown(KeyboardKey.RightShift);
-            if (Raylib.IsKeyPressed(KeyboardKey.CapsLock))
-            {
-                capsLockPressed = !capsLockPressed;
-            }
-
+            testCable.draw();
+            state.process();
+            camera.process();
+            grid.draw(state);
+            octoComps.ForEach(x => { x.process(state); x.draw(); });
             handleInput();
             mousePos = Raylib.GetMousePosition();
             mouseDelta = Raylib.GetMouseDelta();
-            leftDown = Raylib.IsMouseButtonDown(MouseButton.Left);
 
             Raylib.BeginDrawing();
+
             Raylib.ClearBackground(Color.Beige);
-            var camVec = getCameraMoveVec();
             components.ForEach(x =>
             {
-                if (!uiSelected)
-                {
-                    x.move(camVec);
-                }
-                drawComp(x);
+                //      x.alignToCamera(camera);
+                x.process(state);
+                x.draw();
             });
             drawPinMenu(selectedComp);
-            if (startPin != null) { Raylib.DrawLineV(getCentreOfCircle(startPin.bounds), mousePos, Color.Black); }
-            buttons.ForEach(x => { drawButton(x); });
+            if (startPin != null) { Raylib.DrawLineV(OctoMath.getCentreOfCircle(startPin.bounds), mousePos, Color.Black); }
+            buttons.ForEach(x => { x.draw(); });
 
-            drawRectangle(inputBox, Color.White);
-            drawTextInRectangle(textInput.text, inputBox, Color.Black, 12);
-            if (isPointInRec(mousePos, inputBox))
+            if (state.leftDown)
             {
-                Raylib.SetMouseCursor(MouseCursor.IBeam);
-            }
-            else
-            {
-                Raylib.SetMouseCursor(MouseCursor.Default);
-            }
-            if (leftDown)
-            {
-                textInput.selected = isPointInRec(mousePos, textInput.rectangle);
+                textInput.selected = OctoMath.isPointInRec(mousePos, textInput.rectangle);
                 uiSelected = textInput.selected;
             }
             if (textInput.selected)
@@ -105,11 +87,10 @@ class Main
                 var pressed = Raylib.GetKeyPressed();
                 if (pressed != 0)
                 {
-                    Console.WriteLine(pressed);
-                    var sign = keyCodeToAscii(pressed);
-                    if (isAlphaNumeric(sign))
+                    var sign = OctoUtils.keyCodeToAscii(state, pressed);
+                    if (OctoUtils.isAlphaNumeric(sign))
                     {
-                        textInput.text += keyCodeToAscii(pressed);
+                        textInput.text += sign;
                     }
                 }
                 if (Raylib.IsKeyPressed(KeyboardKey.Backspace) || Raylib.IsKeyPressedRepeat(KeyboardKey.Backspace))
@@ -120,27 +101,16 @@ class Main
                     }
                 }
             }
-            if (isPointInRec(mousePos, textInput.rectangle))
-            {
-                Raylib.SetMouseCursor(MouseCursor.IBeam);
-            }
-            else
-            {
-                Raylib.SetMouseCursor(MouseCursor.Default);
-            }
-
             var back = new Rectangle(775, 200, 25, 25);
-            drawRectangle(back, views.Count == 0 ? Color.Gray : Color.Maroon);
-            if (buttonPressed(back) && views.Count > 0)
+            Drawing.drawRectangle(back, views.Count == 0 ? Color.Gray : Color.Maroon);
+            if (state.leftPressed && OctoMath.mouseInRec(back) && views.Count > 0)
             {
                 components = views[views.Count - 1];
                 views.RemoveAt(views.Count - 1);
             }
+
             Raylib.DrawFPS(0, 0);
-
-
             Raylib.EndDrawing();
-
         }
         Raylib.CloseWindow();
     }
@@ -158,14 +128,12 @@ class Main
 
     void spawnComp(IComponent component)
     {
-        alignPins(component);
+        Console.WriteLine("a--");
+        component.alignSizeToGrid(grid);
+        component.alignPins();
         components.Add(component);
     }
-    void drawButton(Button button)
-    {
-        drawRectangle(button.rectangle, button.isHover ? button.hoverColor : button.btnColour);
-        drawTextInRectangle(button.text, button.rectangle, button.textColour, 25);
-    }
+
 
     void drawPinMenu(IComponent component)
     {
@@ -175,12 +143,12 @@ class Main
         var exit = new Rectangle(775, 400, 25, 25);
         var inspect = new Rectangle(750, 400, 25, 25);
         var isBaseComp = component.getType() == "nand" || component.getType() == "input" || component.getType() == "output";
-        drawRectangle(box, Color.Purple);
+        Drawing.drawRectangle(box, Color.Purple);
 
-        drawRectangle(exit, Color.Red);
+        Drawing.drawRectangle(exit, Color.Red);
         if (!isBaseComp)
         {
-            drawRectangle(inspect, Color.Blue);
+            Drawing.drawRectangle(inspect, Color.Blue);
         }
 
         var pins = component.getPins();
@@ -194,17 +162,17 @@ class Main
         {
 
             var newRect = new Rectangle(rects[i].Position + i * new Vector2(20, 0), rects[i].Size);
-            if (Raylib.IsMouseButtonPressed(MouseButton.Left) && isPointInRec(Raylib.GetMousePosition(), newRect))
+            if (Raylib.IsMouseButtonPressed(MouseButton.Left) && OctoMath.isPointInRec(Raylib.GetMousePosition(), newRect))
             {
                 pins[i].setState(!pins[i].state);
             }
-            drawCircle(newRect, pins[i].state ? Color.Green : Color.Red);
+            Drawing.drawCircle(newRect, pins[i].state ? Color.Green : Color.Red);
         }
-        if (Raylib.IsMouseButtonPressed(MouseButton.Left) && isPointInRec(Raylib.GetMousePosition(), exit))
+        if (Raylib.IsMouseButtonPressed(MouseButton.Left) && OctoMath.isPointInRec(Raylib.GetMousePosition(), exit))
         {
             selectedComp = null;
         }
-        if (buttonPressed(inspect) && !isBaseComp)
+        if (state.leftPressed && OctoMath.mouseInRec(inspect) && !isBaseComp)
         {
             var comp = Utils.Load(component.getType());
             views.Add(components);
@@ -265,27 +233,6 @@ class Main
         }
     }
 
-    bool buttonPressed(Rectangle rectangle)
-    {
-        return Raylib.IsMouseButtonPressed(MouseButton.Left) && isPointInRec(Raylib.GetMousePosition(), rectangle);
-    }
-    bool isAlphaNumeric(char c)
-    {
-        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9');
-    }
-    char keyCodeToAscii(int keycode)
-    {
-        // keycode 65 = a = Ascii A; 
-        var retChar = (char)keycode;
-        Console.WriteLine(capsLockPressed || shiftPressd);
-
-        if (!(capsLockPressed || shiftPressd) && keycode >= 65)
-        {
-            retChar = (char)(keycode - ('A' - 'a'));
-        }
-        Console.WriteLine(retChar);
-        return retChar;
-    }
     void handleInput()
     {
 
@@ -293,7 +240,7 @@ class Main
         var mouseDelta = Raylib.GetMouseDelta();
         buttons.ForEach(x =>
         {
-            if (isPointInRec(mousePos, x.rectangle))
+            if (OctoMath.isPointInRec(mousePos, x.rectangle))
             {
                 x.isHover = true;
                 if (Raylib.IsMouseButtonPressed(MouseButton.Left))
@@ -310,7 +257,7 @@ class Main
         {
             foreach (var x in components)
             {
-                if (isPointInRec(mousePos, x.getBounds()))
+                if (OctoMath.isPointInRec(mousePos, x.getBounds()))
                 {
                     draggedComponent = x;
                     selectedComp = draggedComponent;
@@ -324,7 +271,7 @@ class Main
             {
                 foreach (var y in x.getPins())
                 {
-                    if (Raylib.CheckCollisionPointCircle(mousePos, getCentreOfCircle(y.bounds), y.bounds.Width / 2))
+                    if (Raylib.CheckCollisionPointCircle(mousePos, OctoMath.getCentreOfCircle(y.bounds), y.bounds.Width / 2))
                     {
                         startPin = y;
                         break;
@@ -339,7 +286,7 @@ class Main
             {
                 foreach (var y in x.getPins())
                 {
-                    if (Raylib.CheckCollisionPointCircle(mousePos, getCentreOfCircle(y.bounds), y.bounds.Width / 2))
+                    if (Raylib.CheckCollisionPointCircle(mousePos, OctoMath.getCentreOfCircle(y.bounds), y.bounds.Width / 2))
                     {
                         foundPin = y;
                         break;
@@ -368,7 +315,8 @@ class Main
                 }
                 if (outPin != null && inPin != null)
                 {
-                    if (!wouldBeCyclic(outPin.baseComponent, inPin.baseComponent))
+                    var comp = (IComponent)outPin.baseComponent;
+                    if (!comp.wouldBeCyclic(inPin.baseComponent))
                     {
                         outPin.connectedOuts.Add(inPin);
                         outPin.setOuts();
@@ -379,209 +327,11 @@ class Main
         }
         if (Raylib.IsMouseButtonDown(MouseButton.Left))
         {
-            if (draggedComponent != null) { draggedComponent.move(mouseDelta); }
+            if (draggedComponent != null && Raymath.Vector2Length(mouseDelta) > 1) { draggedComponent.setPosition(mousePos); draggedComponent.alignToGrid(grid); }
         }
         if (Raylib.IsMouseButtonReleased(MouseButton.Left))
         {
             draggedComponent = null;
         }
-    }
-
-    bool queueContains(Queue<IComponent> queue, IComponent e)
-    {
-        var found = false;
-        foreach (var x in queue)
-        {
-            if (x == e)
-            {
-                found = true;
-                break;
-            }
-        }
-        return found;
-    }
-    bool wouldBeCyclic(IComponent component, IComponent newComponent)
-    {
-        if (component == newComponent) { return true; }
-        var found = false;
-        var openList = new Queue<IComponent>() { };
-        var closedList = new Queue<IComponent>() { };
-
-        foreach (var x in newComponent.getOutputPins())
-        {
-            x.connectedOuts.ForEach(y =>
-            {
-                if (!queueContains(openList, y.baseComponent.getHighestComp()) && !queueContains(closedList, y.baseComponent.getHighestComp()))
-                {
-                    openList.Enqueue(y.baseComponent.getHighestComp());
-                }
-            });
-        }
-        while (openList.Count > 0 && !found)
-        {
-            var e = openList.Dequeue();
-            if (e == component.getHighestComp())
-            {
-                found = true;
-            }
-            foreach (var x in e.getOutputPins())
-            {
-                x.connectedOuts.ForEach(y =>
-                {
-                    if (!queueContains(openList, y.baseComponent.getHighestComp()) && !queueContains(closedList, y.baseComponent.getHighestComp()))
-                    {
-                        openList.Enqueue(y.baseComponent.getHighestComp());
-                    }
-                });
-            }
-            closedList.Enqueue(e);
-        }
-        Console.WriteLine(found);
-        return found;
-    }
-
-    static void drawRectangle(Rectangle rectangle, Color color)
-    {
-        Raylib.DrawRectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height, color);
-    }
-
-    static void drawRectangleWithOutline(Rectangle rectangle, Color color, Color outlineColor)
-    {
-        Raylib.DrawRectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height, color);
-        Raylib.DrawRectangleLines((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height, outlineColor);
-    }
-
-    Vector2 getCameraMoveVec()
-    {
-        var cameraMovVec = new Vector2();
-        if (Raylib.IsKeyDown(KeyboardKey.D))
-        {
-            cameraMovVec.X += -1 * scrollSpeed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.W))
-        {
-            cameraMovVec.Y += +1 * scrollSpeed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.S))
-        {
-            cameraMovVec.Y += -1 * scrollSpeed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.A))
-        {
-            cameraMovVec.X += +1 * scrollSpeed;
-        }
-        return cameraMovVec;
-    }
-
-    static void alignPins(IComponent component)
-    {
-        var pin = component.getPins()[0];
-        var tmpList = new List<Rectangle>();
-        var inputs = component.getInputPins();
-        var biggestPinSize = Math.Max(inputs.Length, component.getOutputPins().Length);
-        component.setSize(new Vector2(pin.bounds.Size.X * 2, biggestPinSize * pin.bounds.Size.Y + 10));
-        foreach (var x in inputs)
-        {
-            tmpList.Add(x.bounds);
-        }
-        var newRect = component.getBounds();
-        newRect.X -= pin.bounds.Width / 2;
-        var ordered = Flexbox.alignTop(newRect, tmpList);
-        for (int i = 0; i < ordered.Count; i++)
-        {
-            inputs[i].bounds = ordered[i];
-        }
-
-        var outputs = component.getOutputPins();
-        tmpList = new List<Rectangle>();
-        foreach (var x in outputs)
-        {
-            tmpList.Add(x.bounds);
-        }
-        newRect = component.getBounds();
-        newRect.X += newRect.Width - pin.bounds.Width / 2;
-        ordered = Flexbox.alignTop(newRect, tmpList);
-        for (int i = 0; i < ordered.Count; i++)
-        {
-            outputs[i].bounds = ordered[i];
-        }
-
-    }
-    void drawComp(IComponent comp)
-    {
-        alignPins(comp);
-        var bounds = comp.getBounds();
-        var textBounds = bounds;
-        textBounds.Y += textBounds.Height / 2;
-
-        var inputs = comp.getPins();
-
-        if (selectedComp != null && comp == selectedComp)
-        {
-            drawRectangleWithOutline(bounds, Color.Blue, Color.Black);
-        }
-        else
-        {
-            drawRectangle(bounds, Color.Blue);
-        }
-        for (int i = 0; i < inputs.Length; i++)
-        {
-            drawPin(inputs[i]);
-        }
-        drawTextInRectangle(comp.getType().ToString(), textBounds, Color.White);
-    }
-
-    void drawCircle(Rectangle rect, Color color)
-    {
-        Raylib.DrawCircleV(getCentreOfCircle(rect), rect.Width / 2, color);
-    }
-    void drawPin(Pin pin)
-    {
-        var bounds = pin.bounds;
-        drawCircle(pin.bounds, pin.state ? Color.Green : Color.Red);
-        pin.connectedOuts.ForEach(x =>
-        {
-            if (!(pin.isInner || x.isInner))
-            {
-                Raylib.DrawLineV(getCentreOfCircle(pin.bounds), getCentreOfCircle(x.bounds), Color.Black);
-            }
-        });
-    }
-
-    static Vector2 getCentreOfCircle(Rectangle rectangle)
-    {
-        return new Vector2(rectangle.X + rectangle.Width / 2, rectangle.Y + rectangle.Height / 2);
-    }
-
-    static void drawTextInRectangle(string text, Rectangle rectangle, Color color, int textSize = -1)
-    {
-        var fontSize = textSize;
-        if (textSize == -1)
-        {
-            fontSize = 1;
-            var width = rectangle.Width;
-            var size = Raylib.MeasureTextEx(Raylib.GetFontDefault(), text, fontSize, 5);
-            while (size.X < width && size.Y < rectangle.Height)
-            {
-                fontSize++;
-                size = Raylib.MeasureTextEx(Raylib.GetFontDefault(), text, fontSize, 5);
-            }
-            fontSize--;
-        }
-        Raylib.DrawText(text, (int)rectangle.X, (int)rectangle.Y, fontSize, color);
-    }
-    static void drawHairCross()
-    {
-        var width = Raylib.GetScreenWidth();
-        var height = Raylib.GetScreenHeight();
-        var size = 100;
-        var startPos = new Vector2(width / 2, height / 2);
-        Raylib.DrawLine((int)startPos.X - size, (int)startPos.Y, (int)startPos.X + size, (int)startPos.Y, Color.White);
-        Raylib.DrawLine((int)startPos.X, (int)startPos.Y - size, (int)startPos.X, (int)startPos.Y + size, Color.White);
-    }
-
-    static bool isPointInRec(Vector2 point, Rectangle rectangle)
-    {
-        return Raylib.CheckCollisionPointRec(point, rectangle);
     }
 }

@@ -11,6 +11,7 @@ public class Component : IComponent
     public List<Output> outputs = new List<Output>();
     public Rectangle bounds = new Rectangle(0, 0, 100, 100);
     public IComponent? baseComponent = null;
+    public bool isSelected;
     public string type = "";
 
     public Component(string type)
@@ -125,7 +126,6 @@ public class Component : IComponent
     public IComponent getHighestComp()
     {
         var baseComp = this.baseComponent;
-        Console.WriteLine("b");
         if (baseComp == null || baseComp == this)
         {
             return this;
@@ -134,7 +134,6 @@ public class Component : IComponent
         {
             baseComp = baseComp.getBaseComp();
         }
-        Console.WriteLine("a");
         return baseComp;
     }
 
@@ -154,6 +153,16 @@ public class Component : IComponent
     public void setHighestComp(IComponent component)
     {
         this.baseComponent = component;
+    }
+
+    public bool getIsSelected()
+    {
+        return isSelected;
+    }
+
+    public void setIsSelected(bool val)
+    {
+        this.isSelected = val;
     }
 }
 

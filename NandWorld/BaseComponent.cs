@@ -8,6 +8,7 @@ public abstract class BaseComponent : IComponent
     public string type = "";
     public Rectangle bounds = new Rectangle(0, 0, 0, 0);
     public IComponent? baseComponent;
+    public bool isSelected = false;
     public BaseComponent(int amountPins, int amountInputPins)
     {
         this.pins = new Pin[amountPins];
@@ -130,8 +131,6 @@ public abstract class BaseComponent : IComponent
         {
             return this;
         }
-        Console.WriteLine(this.getType() + "bbccff" + baseComp.getType());
-
         IComponent? last = null;
         while (baseComp.getBaseComp() != null && baseComp != last)
         {
@@ -158,5 +157,14 @@ public abstract class BaseComponent : IComponent
     public void setHighestComp(IComponent component)
     {
         this.baseComponent = component;
+    }
+
+    public bool getIsSelected()
+    {
+        return isSelected;
+    }
+    public void setIsSelected(bool val)
+    {
+        this.isSelected = val;
     }
 }
