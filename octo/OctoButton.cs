@@ -28,7 +28,7 @@ public class OctoButton : OctoComp
         this.callbackFn = callbackFn;
     }
 
-    public void draw(OctoState state)
+    public virtual void draw(OctoState state)
     {
         Drawing.drawRectangle(rectangle, isHover ? hoverColor : btnColour);
         Drawing.fillTextInRectangle(text, rectangle, textColour, 25);
@@ -36,10 +36,12 @@ public class OctoButton : OctoComp
 
     public void process(OctoState state)
     {
+        if (state.leftClickHandled) { return; }
         isHover = OctoMath.mouseInRec(rectangle);
         if (state.leftPressed && isHover)
         {
             isPressed = true;
+            state.leftClickHandled = true;
             callbackFn();
         }
         else

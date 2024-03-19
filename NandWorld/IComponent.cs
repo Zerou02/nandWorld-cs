@@ -1,11 +1,12 @@
 using System.Data;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using Raylib_cs;
 
 public interface IComponent : OctoComp
 {
     public string getType();
-    public List<IComponent> getComponents();
+
     public void eval();
 
     public Pin[] getInputPins();
@@ -20,6 +21,7 @@ public interface IComponent : OctoComp
     void setBaseComp(IComponent component);
     IComponent? getBaseComp();
     IComponent getHighestComp();
+    public List<IComponent> getComponents();
     List<IComponent> getConnectedHighestOuts();
     void setHighestComp(IComponent component);
     void alignSizeToGrid(Grid grid)
@@ -32,7 +34,7 @@ public interface IComponent : OctoComp
     bool getIsSelected();
     void setIsSelected(bool val);
 
-    public void process(OctoState state)
+    public new void process(OctoState state)
     {
         if (state.leftPressed)
         {
@@ -71,7 +73,7 @@ public interface IComponent : OctoComp
         }
 
     }
-    void draw()
+    public new void draw(OctoState state)
     {
         alignPins();
         var bounds = getBounds();

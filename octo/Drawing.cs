@@ -1,3 +1,4 @@
+using System.Numerics;
 using Raylib_cs;
 
 public class Drawing
@@ -42,4 +43,18 @@ public class Drawing
         Raylib.DrawCircleV(OctoMath.getCentreOfCircle(rect), rect.Width / 2, color);
     }
 
+    public static void drawImage(SpriteTex tex, Rectangle src, Rectangle dest)
+    {
+        Raylib.DrawTexturePro(tex.texture2D, src, dest, new Vector2(0, 0), 0, Color.White);
+    }
+
+    public static void drawSpriteFromSheet(OctoSpriteSheet sheet, Rectangle dest, int spriteNr)
+    {
+        var width = sheet.tex.width;
+        var spriteSize = width / sheet.columns;
+        var row = spriteNr / sheet.columns;
+        var column = spriteNr % sheet.columns;
+        var src = new Rectangle(column * spriteSize, row * spriteSize, spriteSize, spriteSize);
+        Raylib.DrawTexturePro(sheet.tex.texture2D, src, dest, new Vector2(0, 0), 0, Color.White);
+    }
 }

@@ -21,6 +21,8 @@ public abstract class BaseComponent : IComponent
         eval();
     }
 
+
+
     public abstract void eval();
 
     public virtual void propagate()

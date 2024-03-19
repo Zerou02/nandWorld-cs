@@ -1,22 +1,19 @@
 public class OctoUtils
 {
-
-
-
-    /*     public static bool queueContains(Queue<IComponent> queue, IComponent e)
+    public static bool queueContains(Queue<IComponent> queue, IComponent e)
+    {
+        var found = false;
+        foreach (var x in queue)
         {
-            var found = false;
-            foreach (var x in queue)
+            if (x == e)
             {
-                if (x == e)
-                {
-                    found = true;
-                    break;
-                }
+                found = true;
+                break;
             }
-            return found;
         }
-     */
+        return found;
+    }
+
 
     public static bool isSaneAscii(char c)
     {

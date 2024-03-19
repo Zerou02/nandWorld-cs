@@ -5,6 +5,7 @@ public class Grid : OctoComp
 {
     public int gridSize = 20;
     public List<List<int>> grid = new List<List<int>>();
+    public Vector2? currSelectedField;
 
     public Grid(OctoState state)
     {
@@ -48,15 +49,13 @@ public class Grid : OctoComp
 
     public void process(OctoState state)
     {
-        var pos = getGridPos((int)state.mousePos.X, (int)state.mousePos.Y);
-        if (state.leftDown)
+        if (state.leftDown && !state.leftClickHandled)
         {
-            grid[(int)pos.Y][(int)pos.X] = 1;
+            currSelectedField = getGridPos((int)state.mousePos.X, (int)state.mousePos.Y);
         }
-        else if (state.rightDown)
+        else
         {
-            grid[(int)pos.Y][(int)pos.X] = 0;
-
+            currSelectedField = null;
         }
     }
 }

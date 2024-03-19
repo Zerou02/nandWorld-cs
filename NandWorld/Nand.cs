@@ -15,4 +15,8 @@ public class Nand : BaseComponent
         pins[2].setOuts();
     }
 
+    public void draw()
+    {
+        Console.WriteLine("D");
+    }
 }

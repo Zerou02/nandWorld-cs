@@ -1,6 +1,6 @@
 public interface OctoComp
 {
-    public void draw(OctoState octoState) { }
-    public void process(OctoState octoState) { }
+    public virtual void draw(OctoState octoState) { }
+    public virtual void process(OctoState octoState) { }
 
 }
