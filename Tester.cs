@@ -1,6 +1,6 @@
 public class Tester
 {
-    public static void test(IComponent component, bool[][] tests)
+    public static void test(BaseComponent component, bool[][] tests)
     {
         var result = new bool[tests.Length];
         var count = 0;

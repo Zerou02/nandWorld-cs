@@ -1,6 +1,6 @@
 public class OctoUtils
 {
-    public static bool queueContains(Queue<IComponent> queue, IComponent e)
+    public static bool queueContains(Queue<BaseComponent> queue, BaseComponent e)
     {
         var found = false;
         foreach (var x in queue)

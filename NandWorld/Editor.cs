@@ -1,17 +1,15 @@
 using System.Numerics;
-using System.Runtime.InteropServices;
-using Microsoft.VisualBasic;
 using Raylib_cs;
 
 public class Editor : OctoScene
 {
-    public List<IComponent> nandWorldComps = new List<IComponent>();
-    IComponent draggedComponent;
-    IComponent selectedComp;
+    public List<BaseComponent> nandWorldComps = new List<BaseComponent>();
+    BaseComponent draggedComponent;
+    BaseComponent selectedComp;
 
     Grid grid;
     Pin startPin;
-    List<List<IComponent>> views = new List<List<IComponent>>();
+    List<List<BaseComponent>> views = new List<List<BaseComponent>>();
     List<Cable> cables = new List<Cable>();
     OctoButton backBtn;
     int currCableType = 0;
@@ -20,11 +18,11 @@ public class Editor : OctoScene
     {
         var wireTex = octo.textureLoader.getTex("wires");
         wireSheet = new OctoSpriteSheet(wireTex, 16, 8);
-        var btn = new OctoButton(new Rectangle(700, 0, 100, 20), "create Nand", () => { spawnComp(new Nand()); });
-        var btn2 = new OctoButton(new Rectangle(700, 30, 100, 20), "create Input ", () => { spawnComp(new Input()); });
-        var btn3 = new OctoButton(new Rectangle(700, 60, 100, 20), "create Output", () => { spawnComp(new Output()); });
+        //  var btn = new OctoButton(new Rectangle(700, 0, 100, 20), "create Nand", () => { spawnComp(new Nand()); });
+        //  var btn2 = new OctoButton(new Rectangle(700, 30, 100, 20), "create Input ", () => { spawnComp(new Input()); });
+        //  var btn3 = new OctoButton(new Rectangle(700, 60, 100, 20), "create Output", () => { spawnComp(new Output()); });
         var btn4 = new OctoButton(new Rectangle(700, 90, 100, 20), "save         ", () => { save(); });
-        var btn5 = new OctoButton(new Rectangle(700, 120, 100, 20), "load        ", () => { spawnComp(Utils.Load("and")); });
+        //var btn5 = new OctoButton(new Rectangle(700, 120, 100, 20), "load        ", () => { spawnComp(Utils.Load("and")); });
         var cable1Btn = new TextureBtn(new Rectangle(775, 250, 25, 25), wireSheet, 0, () => { currCableType = 0; });
         var cable2Btn = new TextureBtn(new Rectangle(775, 275, 25, 25), wireSheet, 1 * 2 * 16, () => { currCableType = 1; });
         var cable3Btn = new TextureBtn(new Rectangle(775, 300, 25, 25), wireSheet, 2 * 2 * 16, () => { currCableType = 2; });
@@ -33,11 +31,11 @@ public class Editor : OctoScene
 
         backBtn = new OctoButton(new Rectangle(775, 200, 25, 25), "", () =>
         {
-            if (views.Count > 0)
+            /* if (views.Count > 0)
             {
                 nandWorldComps = views[views.Count - 1];
                 views.RemoveAt(views.Count - 1);
-            }
+            } */
         }
         );
 
@@ -45,9 +43,17 @@ public class Editor : OctoScene
         this.octo = octo;
         textInput.text = "and";
         grid = new Grid(octo.state);
-        spawnComp(new Nand());
-        addComp(btn, btn2, btn3, btn4, btn5, backBtn, cable1Btn, cable2Btn, cable3Btn, cable4Btn);
-        addComp(textInput);
+        //spawnComp(new Nand());
+        //addComp(btn, btn2, btn3, btn4, btn5, backBtn, cable1Btn, cable2Btn, cable3Btn, cable4Btn);
+        //addComp(textInput);
+        var c1 = new Cable(grid, wireSheet, 0);
+        foreach (var x in c1.pins)
+        {
+            Console.WriteLine(x.GetHashCode());
+        }
+        var nand = new Nand();
+        nandWorldComps.Add(nand);
+        nandWorldComps.Add(new Nand());
     }
 
     public override void process(OctoState state)
@@ -80,10 +86,33 @@ public class Editor : OctoScene
                 x.add(field);
                 cables.Add(x);
                 addComp(x);
+                foreach (var y in nandWorldComps)
+                {
+                    foreach (var z in y.pins)
+                    {
+                        var pos = grid.getGridPos((int)z.bounds.X, (int)z.bounds.Y);
+                        if (x.contains(pos))
+                        {
+                            x.addPin(z);
+                        }
+                    }
+                }
             }
             else if (adjacentSameCables.Count == 1)
             {
                 adjacentSameCables[0].add(field);
+                var x = adjacentSameCables[0];
+                foreach (var y in nandWorldComps)
+                {
+                    foreach (var z in y.pins)
+                    {
+                        var pos = grid.getGridPos((int)z.bounds.X, (int)z.bounds.Y);
+                        if (x.contains(pos))
+                        {
+                            x.addPin(z);
+                        }
+                    }
+                }
             }
             else
             {
@@ -98,10 +127,22 @@ public class Editor : OctoScene
                     removeComponent(adjacentSameCables[i]);
                     cables.Remove(adjacentSameCables[i]);
                 }
+                var xx = mainCable;
+                foreach (var y in nandWorldComps)
+                {
+                    foreach (var z in y.pins)
+                    {
+                        var pos = grid.getGridPos((int)z.bounds.X, (int)z.bounds.Y);
+                        if (xx.contains(pos))
+                        {
+                            xx.addPin(z);
+                        }
+                    }
+                }
             }
         }
-        backBtn.btnColour = views.Count == 0 ? Color.Gray : Color.Maroon;
-        nandWorldComps.ForEach(x => x.process(state));
+        // backBtn.btnColour = views.Count == 0 ? Color.Gray : Color.Maroon;
+        // nandWorldComps.ForEach(x => x.process(state));
     }
 
     public override void draw(OctoState state)
@@ -111,23 +152,22 @@ public class Editor : OctoScene
         nandWorldComps.ForEach(x => x.draw(state));
         if (startPin != null) { Raylib.DrawLineV(OctoMath.getCentreOfCircle(startPin.bounds), octo.state.mousePos, Color.Black); }
         drawPinMenu(selectedComp);
-
     }
 
     void save()
     {
-        var newComp = new Component("and");
-        this.nandWorldComps.ForEach(x => newComp.addComp(x));
-        Utils.save(newComp);
+        // var newComp = new Component("and");
+        //this.nandWorldComps.ForEach(x => newComp.addComp(x));
+        //Utils.save(newComp);
     }
 
 
-    void spawnComp(IComponent component)
+    /* void spawnComp(IComponent component)
     {
         component.alignSizeToGrid(grid);
         component.alignPins();
         this.nandWorldComps.Add(component);
-    }
+    } */
 
     void handleInput()
     {
@@ -135,10 +175,20 @@ public class Editor : OctoScene
         {
             foreach (var x in nandWorldComps)
             {
-                if (OctoMath.isPointInRec(octo.state.mousePos, x.getBounds()))
+                if (OctoMath.isPointInRec(octo.state.mousePos, x.bounds))
                 {
                     draggedComponent = x;
+                    x.isSelected = true;
                     selectedComp = draggedComponent;
+                    foreach (var y in draggedComponent.pins)
+                    {
+                        y.removeFromCables();
+                    }
+                    foreach (var y in draggedComponent.getInputPins())
+                    {
+                        y.setState(false);
+                    }
+
                     break;
                 }
             }
@@ -171,7 +221,7 @@ public class Editor : OctoScene
                     }
                 }
             }
-            if (startPin != null && foundPin != null)
+            /* if (startPin != null && foundPin != null)
             {
                 Pin? outPin = null;
                 Pin? inPin = null;
@@ -201,19 +251,37 @@ public class Editor : OctoScene
                     }
                 }
             }
-            startPin = null;
+            startPin = null; */
         }
         if (Raylib.IsMouseButtonDown(MouseButton.Left))
         {
-            if (draggedComponent != null && Raymath.Vector2Length(octo.state.mouseDelta) > 1) { draggedComponent.setPosition(octo.state.mousePos); draggedComponent.alignToGrid(grid); }
+            if (draggedComponent != null && Raymath.Vector2Length(octo.state.mouseDelta) > 1)
+            {
+                draggedComponent.setPosition(octo.state.mousePos);
+                draggedComponent.alignToGrid(grid);
+            }
         }
         if (Raylib.IsMouseButtonReleased(MouseButton.Left))
         {
+            if (draggedComponent != null)
+            {
+                foreach (var y in draggedComponent.pins)
+                {
+                    var pos = grid.getGridPos((int)y.bounds.Position.X, (int)y.bounds.Position.Y);
+                    foreach (var x in cables)
+                    {
+                        if (x.contains(pos))
+                        {
+                            x.addPin(y);
+                        }
+                    }
+                }
+            }
             draggedComponent = null;
         }
     }
 
-    void drawPinMenu(IComponent component)
+    void drawPinMenu(BaseComponent component)
     {
         if (selectedComp == null) { return; }
 
@@ -252,62 +320,63 @@ public class Editor : OctoScene
         }
         if (octo.state.leftPressed && OctoMath.mouseInRec(inspect) && !isBaseComp)
         {
-            var comp = Utils.Load(component.getType());
+            //var comp = Utils.Load(component.getType());
             views.Add(nandWorldComps);
-            nandWorldComps = new List<IComponent>();
-            var nodeMap = new Dictionary<IComponent, int>();
+            nandWorldComps = new List<BaseComponent>();
+            var nodeMap = new Dictionary<BaseComponent, int>();
 
-            foreach (var x in comp.getComponents())
-            {
-                x.setHighestComp(x);
-                nodeMap.Add(x, x.getType() == "input" ? 1 : -1);
-                foreach (var y in x.getPins()) { y.isInner = false; }
-                nandWorldComps.Add(x);
-            }
-            for (int i = 1; i < comp.getComponents().Count + 1; i++)
-            {
-                var list = new List<IComponent>();
-                foreach (var x in nodeMap.Keys)
-                {
-                    if (nodeMap[x] == i)
-                    {
-                        list.Add(x);
-                    }
-                }
-                var map = new HashSet<IComponent>();
-                list.ForEach(x =>
-                {
-                    foreach (var y in x.getConnectedHighestOuts())
-                    {
-                        map.Add(y);
-                    }
-                });
-                foreach (var x in map)
-                {
-                    nodeMap[x] = i + 1;
-                }
-            }
-            foreach (var x in nodeMap.Keys)
-            {
-                Console.WriteLine(x.GetType() + "; " + nodeMap[x]);
-            }
-            for (int i = 1; i < component.getComponents().Count + 1; i++)
-            {
-                var list = new List<IComponent>();
-                foreach (var x in nodeMap.Keys)
-                {
-                    if (nodeMap[x] == i)
-                    {
-                        list.Add(x);
-                    }
-                }
-                for (int j = 0; j < list.Count; j++)
-                {
-                    list[j].setPosition(new Vector2(i * 75, (j + 1) * 50));
-                }
-            }
+            /*    foreach (var x in comp.getComponents())
+               {
+                   x.setHighestComp(x);
+                   nodeMap.Add(x, x.getType() == "input" ? 1 : -1);
+                   foreach (var y in x.getPins()) { y.isInner = false; }
+                   nandWorldComps.Add(x);
+               }
+               for (int i = 1; i < comp.getComponents().Count + 1; i++)
+               {
+                   var list = new List<BaseComponent>();
+                   foreach (var x in nodeMap.Keys)
+                   {
+                       if (nodeMap[x] == i)
+                       {
+                           list.Add(x);
+                       }
+                   }
+                   var map = new HashSet<BaseComponent>();
+                   list.ForEach(x =>
+                   {
+                       foreach (var y in x.getConnectedHighestOuts())
+                       {
+                           map.Add(y);
+                       }
+                   });
+                   foreach (var x in map)
+                   {
+                       nodeMap[x] = i + 1;
+                   }
+               }
+               foreach (var x in nodeMap.Keys)
+               {
+                   Console.WriteLine(x.GetType() + "; " + nodeMap[x]);
+               }
+               for (int i = 1; i < component.getComponents().Count + 1; i++)
+               {
+                   var list = new List<IComponent>();
+                   foreach (var x in nodeMap.Keys)
+                   {
+                       if (nodeMap[x] == i)
+                       {
+                           list.Add(x);
+                       }
+                   }
+                   for (int j = 0; j < list.Count; j++)
+                   {
+                       list[j].setPosition(new Vector2(i * 75, (j + 1) * 50));
+                   }
+               }
 
-            selectedComp = null;
+               selectedComp = null;
+           } */
         }
     }
 }

@@ -1,6 +1,4 @@
 using Raylib_cs;
-
-
 public class Nand : BaseComponent
 {
     public Nand() : base(3, 2)
@@ -11,12 +9,6 @@ public class Nand : BaseComponent
 
     public override void eval()
     {
-        pins[2].state = !(pins[0].state && pins[1].state);
-        pins[2].setOuts();
-    }
-
-    public void draw()
-    {
-        Console.WriteLine("D");
+        pins[2].setState(!(pins[0].state && pins[1].state));
     }
 }

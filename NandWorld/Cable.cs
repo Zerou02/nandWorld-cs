@@ -2,31 +2,18 @@ using System.Numerics;
 using Raylib_cs;
 public class Cable : OctoComp
 {
-    public List<Pin> ins = new List<Pin>();
-    public List<Pin> outs = new List<Pin>();
+    public List<Pin> pins = new List<Pin>();
     public HashSet<Vector2> path = new HashSet<Vector2>();
     public Grid grid;
     public OctoSpriteSheet tex;
     public int cableType = 0;
+    bool hasActivePin = false;
     public Cable(Grid grid, OctoSpriteSheet tex, int cableType)
     {
         this.grid = grid;
         this.tex = tex;
         this.cableType = cableType;
     }
-
-    public void addPin(bool inPin, Pin pin)
-    {
-        if (inPin)
-        {
-            ins.Add(pin);
-        }
-        else
-        {
-            outs.Add(pin);
-        }
-    }
-
     public int addToBinIndex(int idx, Vector2 currField, Vector2 nextField)
     {
         var offset = new Vector2(currField.X - nextField.X, currField.Y - nextField.Y);
@@ -81,8 +68,26 @@ public class Cable : OctoComp
         }
         return retVal;
     }
+
+    public void process(OctoState state)
+    {
+        hasActivePin = false;
+        foreach (var x in pins)
+        {
+            if (x.state && !x.isReceiverPin)
+            {
+                hasActivePin = true;
+                break;
+            }
+        }
+        foreach (var x in pins)
+        {
+            x.setState(hasActivePin);
+        }
+    }
     public void draw(OctoState state)
     {
+        Console.WriteLine(pins.Count);
         foreach (var x in path)
         {
             var sum = 0;
@@ -91,7 +96,40 @@ public class Cable : OctoComp
             {
                 sum = addToBinIndex(sum, x, y);
             }
-            Drawing.drawSpriteFromSheet(tex, new Rectangle(x.X * grid.gridSize, x.Y * grid.gridSize, grid.gridSize, grid.gridSize), sum + tex.columns * (cableType * 2));
+            var baseSprite = cableType * 2;
+            if (hasActivePin) { baseSprite += 1; }
+            Drawing.drawSpriteFromSheet(tex, new Rectangle(x.X * grid.gridSize, x.Y * grid.gridSize, grid.gridSize, grid.gridSize), sum + tex.columns * baseSprite);
         }
+    }
+
+    public void addPin(Pin pin)
+    {
+        if (pins.Contains(pin) || wouldBeCyclicWith(pin)) { return; }
+        this.pins.Add(pin);
+        pin.cables.Add(this);
+    }
+
+    bool wouldBeCyclicWith(Pin pin)
+    {
+
+    }
+
+    string posToKey(Vector2 pos)
+    {
+        return pos.X.ToString() + "," + pos.Y.ToString();
+    }
+    public bool contains(Vector2 pos)
+    {
+        var found = false;
+        var key = posToKey(pos);
+        foreach (var x in path)
+        {
+            if (posToKey(x) == key)
+            {
+                found = true;
+                break;
+            }
+        }
+        return found;
     }
 }

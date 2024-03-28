@@ -1,13 +1,16 @@
 using System.Numerics;
 using Raylib_cs;
 
-public abstract class BaseComponent : IComponent
+public abstract class BaseComponent : OctoComp
 {
     public Pin[] pins;
     public int inputPins;
     public string type = "";
     public Rectangle bounds = new Rectangle(0, 0, 0, 0);
-    public IComponent? baseComponent;
+    public BaseComponent parentComp;
+    public List<BaseComponent> inputs = new List<BaseComponent>();
+    public List<BaseComponent> outputs = new List<BaseComponent>();
+    public List<BaseComponent> childComponents = new List<BaseComponent>();
     public bool isSelected = false;
     public BaseComponent(int amountPins, int amountInputPins)
     {
@@ -15,22 +18,28 @@ public abstract class BaseComponent : IComponent
         this.inputPins = amountInputPins;
         for (int i = 0; i < amountPins; i++)
         {
-            this.pins[i] = new Pin(this, i >= amountInputPins);
+            this.pins[i] = new Pin(this, i < amountInputPins);
         }
-        baseComponent = null;
+        parentComp = this;
         eval();
     }
 
 
 
-    public abstract void eval();
+    public virtual void eval()
+    {
+        foreach (var x in inputs)
+        {
+            x.eval();
+        }
+    }
 
     public virtual void propagate()
-    {
+    {/* 
         for (int i = inputPins; i < pins.Length; i++)
         {
             pins[i].setOuts();
-        }
+        } */
     }
 
     public virtual Pin[] getInputPins()
@@ -76,7 +85,7 @@ public abstract class BaseComponent : IComponent
     }
     public void connectPin(int idx, Pin pin)
     {
-        pins[idx].connectedOuts.Add(pin);
+        //pins[idx].connectedOuts.Add(pin);
     }
 
     public virtual void setIn(int idx, bool val)
@@ -91,16 +100,10 @@ public abstract class BaseComponent : IComponent
         return this.type;
     }
 
-    public List<IComponent> getComponents()
+    public List<BaseComponent> getComponents()
     {
-        return new List<IComponent>();
+        return new List<BaseComponent>();
     }
-
-    public Rectangle getBounds()
-    {
-        return bounds;
-    }
-
     public void move(Vector2 vec)
     {
         this.bounds = new Rectangle(this.bounds.Position + vec, this.bounds.Size);
@@ -117,7 +120,7 @@ public abstract class BaseComponent : IComponent
     }
 
 
-    public void setBaseComp(IComponent component)
+    /* public void setBaseComp(IComponent component)
     {
         this.baseComponent = component;
     }
@@ -160,7 +163,7 @@ public abstract class BaseComponent : IComponent
     {
         this.baseComponent = component;
     }
-
+ */
     public bool getIsSelected()
     {
         return isSelected;
@@ -168,5 +171,66 @@ public abstract class BaseComponent : IComponent
     public void setIsSelected(bool val)
     {
         this.isSelected = val;
+    }
+
+    public void draw(OctoState state)
+    {
+        alignPins();
+        var textBounds = bounds;
+        textBounds.Y += textBounds.Height / 2;
+
+        if (isSelected)
+        {
+            Drawing.drawRectangleWithOutline(bounds, Color.Blue, Color.Black);
+        }
+        else
+        {
+            Drawing.drawRectangle(bounds, Color.Blue);
+        }
+        foreach (var x in pins)
+        {
+            x.draw(state);
+        }
+        Drawing.fillTextInRectangle(getType().ToString(), textBounds, Color.White);
+    }
+
+    public void alignToGrid(Grid grid)
+    {
+        var pos = bounds.Position;
+        setPosition(new Vector2((int)(pos.X / grid.gridSize) * grid.gridSize, (int)(pos.Y / grid.gridSize) * grid.gridSize));
+    }
+
+    void alignPins()
+    {
+        if (pins.Length == 0) { return; }
+        var pin = pins[0];
+        var tmpList = new List<Rectangle>();
+        var inputs = getInputPins();
+        foreach (var x in inputs)
+        {
+            tmpList.Add(x.bounds);
+        }
+        var newRect = bounds;
+        newRect.X -= pin.bounds.Width / 2;
+        var ordered = Flexbox.alignTop(newRect, tmpList);
+        for (int i = 0; i < ordered.Count; i++)
+        {
+            inputs[i].bounds = ordered[i];
+        }
+
+        var outputs = getOutputPins();
+        tmpList = new List<Rectangle>();
+        foreach (var x in outputs)
+        {
+            tmpList.Add(x.bounds);
+        }
+        newRect = bounds;
+        newRect.X += newRect.Width - pin.bounds.Width / 2;
+        ordered = Flexbox.alignTop(newRect, tmpList);
+        for (int i = 0; i < ordered.Count; i++)
+        {
+            outputs[i].bounds = ordered[i];
+        }
+
     }
 }

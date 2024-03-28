@@ -35,7 +35,7 @@ public class Octo
     public void start(CallbackFn callbackFn)
     {
         Raylib.SetMousePosition((int)state.screenSize.X / 2, (int)state.screenSize.Y / 2);
-        this.comps.Add(new Nand());
+        //this.comps.Add(new Nand());
         while (!Raylib.WindowShouldClose())
         {
             callbackFn();

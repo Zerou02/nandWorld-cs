@@ -1,9 +1,9 @@
-using System.Data;
+/* using System.Data;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Raylib_cs;
 
-public interface IComponent : OctoComp
+public interface IsComponent : OctoComp
 {
     public string getType();
 
@@ -145,4 +145,4 @@ public interface IComponent : OctoComp
         var pos = getBounds().Position;
         setPosition(new Vector2((int)(pos.X / grid.gridSize) * grid.gridSize, (int)(pos.Y / grid.gridSize) * grid.gridSize));
     }
-}
+} */
