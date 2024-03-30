@@ -49,6 +49,10 @@ public class Cable : OctoComp
         return retArr;
     }
 
+    public void removeField(Vector2 vector2)
+    {
+        path.RemoveWhere(x => this.posToKey(x) == posToKey(vector2));
+    }
     public void add(Vector2 vector)
     {
         if (!path.Contains(vector))
@@ -71,10 +75,11 @@ public class Cable : OctoComp
 
     public void process(OctoState state)
     {
+        Console.WriteLine(pins.Count);
         hasActivePin = false;
         foreach (var x in pins)
         {
-            if (x.state && !x.isReceiverPin)
+            if (x.state && !x.isInputPin)
             {
                 hasActivePin = true;
                 break;
@@ -87,7 +92,6 @@ public class Cable : OctoComp
     }
     public void draw(OctoState state)
     {
-        Console.WriteLine(pins.Count);
         foreach (var x in path)
         {
             var sum = 0;
@@ -104,14 +108,26 @@ public class Cable : OctoComp
 
     public void addPin(Pin pin)
     {
-        if (pins.Contains(pin) || wouldBeCyclicWith(pin)) { return; }
+        if (pins.Contains(pin)) { return; }
         this.pins.Add(pin);
         pin.cables.Add(this);
     }
 
-    bool wouldBeCyclicWith(Pin pin)
+    public bool wouldBeCyclicWith(Pin pin)
     {
-
+        var retVal = false;
+        var parent = pin.parentComp.getHighestParent();
+        foreach (var x in pins)
+        {
+            if (x.parentComp.getHighestParent() == parent)
+            {
+                if (x.isInputPin != pin.isInputPin)
+                {
+                    retVal = true;
+                }
+            }
+        }
+        return retVal;
     }
 
     string posToKey(Vector2 pos)

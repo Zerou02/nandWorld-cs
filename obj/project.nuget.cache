@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ZKeylceiMViPRw5c21IuvFIRNa3XFcHxsuOfgnVr2PNBEsGzBq3XDmEEVfBAVsoIF6Yr9w+5DaUc7vyMT0nyzQ==",
+  "dgSpecHash": "oMhRLvcsbS54PyxCmOhJaWAQMbJKUmrmjFdZ+kBjS+MwZcZCGr5tY46VROOgYYJnpwTWXy2uK39tNjj3NZPEzw==",
   "success": true,
-  "projectFilePath": "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj",
+  "projectFilePath": "C:\\Users\\Applefucker\\Desktop\\Programmierung\\cs\\nandWorld-cs\\nandWorld.csproj",
   "expectedPackageFiles": [
-    "/home/esben/.nuget/packages/raylib-cs/6.0.0/raylib-cs.6.0.0.nupkg.sha512",
-    "/home/esben/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Applefucker\\.nuget\\packages\\raylib-cs\\6.0.0\\raylib-cs.6.0.0.nupkg.sha512",
+    "C:\\Users\\Applefucker\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Applefucker\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Applefucker\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512",
+    "C:\\Users\\Applefucker\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Applefucker\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

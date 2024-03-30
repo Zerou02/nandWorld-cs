@@ -34,14 +34,6 @@ public abstract class BaseComponent : OctoComp
         }
     }
 
-    public virtual void propagate()
-    {/* 
-        for (int i = inputPins; i < pins.Length; i++)
-        {
-            pins[i].setOuts();
-        } */
-    }
-
     public virtual Pin[] getInputPins()
     {
         var retPins = new Pin[inputPins];
@@ -83,16 +75,11 @@ public abstract class BaseComponent : OctoComp
     {
         return this.pins;
     }
-    public void connectPin(int idx, Pin pin)
-    {
-        //pins[idx].connectedOuts.Add(pin);
-    }
 
     public virtual void setIn(int idx, bool val)
     {
         pins[idx].state = val;
         eval();
-        propagate();
     }
 
     public string getType()
@@ -120,6 +107,15 @@ public abstract class BaseComponent : OctoComp
     }
 
 
+    public BaseComponent getHighestParent()
+    {
+        var parent = this.parentComp;
+        while (parent.parentComp != parent)
+        {
+            parent = parent.parentComp;
+        }
+        return parent;
+    }
     /* public void setBaseComp(IComponent component)
     {
         this.baseComponent = component;

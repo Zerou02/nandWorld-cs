@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nandWorld")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+968aa105905a414a1132370786945281a27bb4ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("nandWorld")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nandWorld")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,7 +3,7 @@ public class Output : BaseComponent
     public Output() : base(1, 1)
     {
         this.type = "output";
-        this.pins[0].isReceiverPin = false;
+        this.pins[0].isInputPin = false;
         this.bounds = new Raylib_cs.Rectangle(100, 100, 30, 40);
 
     }
@@ -16,11 +16,5 @@ public class Output : BaseComponent
     public override void setIn(int idx, bool val)
     {
         pins[idx].state = val;
-        propagate();
-    }
-
-    public override void propagate()
-    {
-        //  pins[0].setOuts();
     }
 }

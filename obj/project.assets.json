@@ -128,25 +128,24 @@
     ]
   },
   "packageFolders": {
-    "/home/esben/.nuget/packages/": {}
+    "C:\\Users\\Applefucker\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj",
+      "projectUniqueName": "C:\\Users\\Applefucker\\Desktop\\Programmierung\\cs\\nandWorld-cs\\nandWorld.csproj",
       "projectName": "nandWorld",
-      "projectPath": "/home/esben/programmierung/c#/raylibbis/nandWorld/nandWorld.csproj",
-      "packagesPath": "/home/esben/.nuget/packages/",
-      "outputPath": "/home/esben/programmierung/c#/raylibbis/nandWorld/obj/",
+      "projectPath": "C:\\Users\\Applefucker\\Desktop\\Programmierung\\cs\\nandWorld-cs\\nandWorld.csproj",
+      "packagesPath": "C:\\Users\\Applefucker\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Applefucker\\Desktop\\Programmierung\\cs\\nandWorld-cs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/esben/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Applefucker\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/home/esben/godot_nugget_source": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -181,12 +180,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.117/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

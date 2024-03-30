@@ -47,102 +47,94 @@ public class Editor : OctoScene
         //addComp(btn, btn2, btn3, btn4, btn5, backBtn, cable1Btn, cable2Btn, cable3Btn, cable4Btn);
         //addComp(textInput);
         var c1 = new Cable(grid, wireSheet, 0);
-        foreach (var x in c1.pins)
-        {
-            Console.WriteLine(x.GetHashCode());
-        }
         var nand = new Nand();
         nandWorldComps.Add(nand);
         nandWorldComps.Add(new Nand());
     }
 
+    public void handleCables()
+    {
+        if (grid.currSelectedField == null) { return; }
+        var adjacentSameCables = new List<Cable>();
+        var contains = false;
+        var field = (Vector2)grid.currSelectedField;
+        foreach (var x in cables)
+        {
+            if (x.path.Contains(field))
+            {
+                contains = true;
+                break;
+            }
+            if (x.cableType == currCableType && x.isAdjacentTo(field))
+            {
+                adjacentSameCables.Add(x);
+            }
+        };
+        if (contains) { return; }
+        Cable mainCable;
+        if (adjacentSameCables.Count == 0)
+        {
+            mainCable = new Cable(grid, wireSheet, currCableType);
+            cables.Add(mainCable);
+            addComp(mainCable);
+        }
+        else if (adjacentSameCables.Count == 1)
+        {
+            mainCable = adjacentSameCables[0];
+        }
+        else
+        {
+            mainCable = adjacentSameCables[0];
+            for (int i = 1; i < adjacentSameCables.Count; i++)
+            {
+                foreach (var x in adjacentSameCables[i].path)
+                {
+                    mainCable.add(x);
+                }
+                removeComponent(adjacentSameCables[i]);
+                cables.Remove(adjacentSameCables[i]);
+            }
+        }
+        Pin? pinOnField = null;
+        foreach (var x in nandWorldComps)
+        {
+            foreach (var y in x.getPins())
+            {
+                var pos = grid.getGridPos((int)y.bounds.X, (int)y.bounds.Y);
+                if (field.X == pos.X && field.Y == pos.Y)
+                {
+                    pinOnField = y;
+                    break;
+                }
+            }
+        }
+        Console.WriteLine(pinOnField);
+        if (pinOnField == null)
+        {
+            mainCable.add(field);
+        }
+        else
+        {
+            if (!mainCable.wouldBeCyclicWith(pinOnField))
+            {
+                mainCable.addPin(pinOnField);
+            }
+        }
+    }
     public override void process(OctoState state)
     {
         handleInput();
         state.leftClickHandled = draggedComponent != null;
         base.process(state);
         grid.process(state);
-        if (grid.currSelectedField != null)
+        if (!state.leftClickHandled)
         {
-            var adjacentSameCables = new List<Cable>();
-            var contains = false;
-            var field = (Vector2)grid.currSelectedField;
-            foreach (var x in cables)
-            {
-                if (x.path.Contains(field))
-                {
-                    contains = true;
-                    break;
-                }
-                if (x.cableType == currCableType && x.isAdjacentTo(field))
-                {
-                    adjacentSameCables.Add(x);
-                }
-            };
-            if (contains) { return; }
-            if (adjacentSameCables.Count == 0)
-            {
-                var x = new Cable(grid, wireSheet, currCableType);
-                x.add(field);
-                cables.Add(x);
-                addComp(x);
-                foreach (var y in nandWorldComps)
-                {
-                    foreach (var z in y.pins)
-                    {
-                        var pos = grid.getGridPos((int)z.bounds.X, (int)z.bounds.Y);
-                        if (x.contains(pos))
-                        {
-                            x.addPin(z);
-                        }
-                    }
-                }
-            }
-            else if (adjacentSameCables.Count == 1)
-            {
-                adjacentSameCables[0].add(field);
-                var x = adjacentSameCables[0];
-                foreach (var y in nandWorldComps)
-                {
-                    foreach (var z in y.pins)
-                    {
-                        var pos = grid.getGridPos((int)z.bounds.X, (int)z.bounds.Y);
-                        if (x.contains(pos))
-                        {
-                            x.addPin(z);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                var mainCable = adjacentSameCables[0];
-                mainCable.add(field);
-                for (int i = 1; i < adjacentSameCables.Count; i++)
-                {
-                    foreach (var x in adjacentSameCables[i].path)
-                    {
-                        mainCable.add(x);
-                    }
-                    removeComponent(adjacentSameCables[i]);
-                    cables.Remove(adjacentSameCables[i]);
-                }
-                var xx = mainCable;
-                foreach (var y in nandWorldComps)
-                {
-                    foreach (var z in y.pins)
-                    {
-                        var pos = grid.getGridPos((int)z.bounds.X, (int)z.bounds.Y);
-                        if (xx.contains(pos))
-                        {
-                            xx.addPin(z);
-                        }
-                    }
-                }
-            }
+            handleCables();
+            state.leftClickHandled = true;
         }
         // backBtn.btnColour = views.Count == 0 ? Color.Gray : Color.Maroon;
         // nandWorldComps.ForEach(x => x.process(state));
+
     }
 
     public override void draw(OctoState state)
@@ -270,7 +262,7 @@ public class Editor : OctoScene
                     var pos = grid.getGridPos((int)y.bounds.Position.X, (int)y.bounds.Position.Y);
                     foreach (var x in cables)
                     {
-                        if (x.contains(pos))
+                        if (x.contains(pos) && !x.wouldBeCyclicWith(y))
                         {
                             x.addPin(y);
                         }

@@ -7,11 +7,11 @@ public class Pin : OctoComp
     public bool isInner = false;
     public bool isComposite = false;
     public List<Cable> cables = new List<Cable>();
-    public bool isReceiverPin = false;
+    public bool isInputPin = false;
 
-    public Pin(BaseComponent parentComp, bool isReceiverPin)
+    public Pin(BaseComponent parentComp, bool isInputPin)
     {
-        this.isReceiverPin = isReceiverPin;
+        this.isInputPin = isInputPin;
         this.parentComp = parentComp;
     }
 
